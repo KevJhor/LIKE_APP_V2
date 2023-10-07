@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnaddtarjeta"
+        style="@style/Theme.LIKE_APP.buttons"
+        android:layout_width="264dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#2DB78C"
+        android:insetLeft="0dp"
+        android:paddingLeft="70dip"
+        android:paddingRight="70dip"
+        android:text="@string/valbtnsave"
+        android:textColor="@color/black"
+        android:textColorHighlight="#00BCD4"
+        android:textColorLink="#00BCD4"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etnumber4"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/valhetCVV"
+        android:textColorHint="#FF9A9A9A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etnumber3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle1"
+            android:drawableEnd="@drawable/cardsmaller"
+            android:drawablePadding="20dp"
+            android:paddingBottom="20dp"
+            android:textColorHint="#121010" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etnumber3"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/valhetanio"
+        android:textColorHint="#FF9A9A9A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etnumber2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle1"
+            android:drawableEnd="@android:drawable/ic_menu_today"
+            android:drawablePadding="20dp"
+            android:paddingBottom="20dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etnumber2"
+        android:layout_width="317dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/valhetmes"
+        android:textColorHint="#FF9A9A9A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etnumber1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle1"
+            android:drawableEnd="@android:drawable/ic_menu_today"
+            android:drawablePadding="20dp"
+            android:paddingBottom="20dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvtiaddcard"
+        android:layout_width="317dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/valtvaddcard"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtiaddcard"
+        app:srcCompat="@drawable/cardrectangle" />
+
+    <!-- drawable/rectangle_1.xml -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etnumber1"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:hint="@string/valhnumcard"
+        android:textColorHint="#9A9A9A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivcard">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle1"
+            android:drawableLeft="@drawable/tarjeta"
+            android:drawablePadding="20dp"
+            android:paddingBottom="20dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,4 +28,34 @@
     <string name="butAcerPrecios">Acerca de precios</string>
 
     <string name="textAtenC">Atención al cliente</string>
+
+
+    <string name="valtxtcredito">Añadir tarjeta de credito</string>
+    <string name="valtxtdebito">Añadir tarjeta de debito</string>
+    <string name="valtxtdeposito">Pagar con deposito a cuenta</string>
+    <string name="valbtnpagar">Ir a pagar</string>
+    <string name="valtvtarjetauso">Tarjeta en uso</string>
+    <string name="valhintnotarjeta">Sin tarjeta añadida</string>
+    <string name="valtvaddcard">Ingresa los datos de tu tarjeta</string>
+    <string name="valhnumcard">xxxx-xxxx-xx-xxxxxxxxxx</string>
+    <string name="valhetmes">Junio(Mes de vencimineto)</string>
+    <string name="valhetanio">2999(Año de vencimiento)</string>
+    <string name="valhetCVV">CVV</string>
+    <string name="valbtnsave">Guardar</string>
+    <string name="valtvcddeposito">Cuenta a depositar</string>
+    <string name="valcardpagar">xxxx-xxxx-xx-xxxxxxxxxx</string>
+    <string name="valtvsubir">Subir comprobante</string>
+    <string name="valbtnsubir">Subir archivo(.jpg)</string>
+    <string name="valtvsubtotal">Subtotal</string>
+    <string name="valtvcargo">Cargo por envio</string>
+    <string name="valtvtotal">Total</string>
+    <string name="valbtnconf">Confirmar pago</string>
+    <string name="tvnorden">Numero de orden</string>
+    <string name="valtvproveedor">Datos de proveedor</string>
+    <string name="valtvcliente">Datos del cliente</string>
+    <string name="valtvmoto">Datos del motorizado</string>
+    <string name="valbtnverestado">Ver estado de entrega</string>
+    <string name="valtvestadoentrega">Estado de entrega</string>
+    <string name="valbtnmap">Seguir en mapa</string>
+    <string name="valbtnhome">HOME</string>
 </resources>
