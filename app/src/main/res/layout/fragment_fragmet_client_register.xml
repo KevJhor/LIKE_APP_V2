@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Nombre -->
+    <EditText
+        android:id="@+id/etClientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_name"
+        android:inputType="textPersonName" />
+
+    <!-- Apellido -->
+    <EditText
+        android:id="@+id/etClientSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientName"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_surname"
+        android:inputType="textPersonName" />
+
+    <!-- Correo Electrónico -->
+    <EditText
+        android:id="@+id/etClientEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientSurname"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress" />
+
+    <!-- Teléfono -->
+    <EditText
+        android:id="@+id/etClientPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientEmail"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_phone"
+        android:inputType="phone" />
+
+    <!-- Contraseña -->
+    <EditText
+        android:id="@+id/etClientPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientPhone"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword" />
+
+    <!-- Confirmar Contraseña -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientPassword"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_confirm_password"
+        android:inputType="textPassword" />
+
+    <!-- Dirección -->
+    <EditText
+        android:id="@+id/etClientAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etConfirmPassword"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_address"
+        android:inputType="textMultiLine" />
+
+    <!-- Referencia de Dirección -->
+    <EditText
+        android:id="@+id/etAddressReference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etClientAddress"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_address_reference"
+        android:inputType="textMultiLine" />
+
+    <!-- Botón para Registrar -->
+    <Button
+        android:id="@+id/btnClientRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAddressReference"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#3EBE96"
+        android:text="@string/button_register"
+        android:textColor="#FFFFFF" />
+</RelativeLayout>
+
+

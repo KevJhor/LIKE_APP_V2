@@ -16,5 +16,15 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/frag_pregFrec"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Preguntas Frecuentes" />
+
+        <item
+            android:id="@+id/gestionRestaurante"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Gestion Restaurante" />
+
     </group>
 </menu>
