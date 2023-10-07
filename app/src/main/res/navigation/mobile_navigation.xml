@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/frag_pregFrec">
 
     <fragment
         android:id="@+id/nav_home"
@@ -22,4 +22,23 @@
         android:name="com.example.like_app.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/frag_estab"
+        android:name="com.example.like_app.ui.fragmen.List_Rest_Fragment"
+        android:label="@string/Inicio"
+        tools:layout="@layout/fragment_list__rest_" />
+
+    <fragment
+        android:id="@+id/frag_pregFrec"
+        android:name="com.example.like_app.ui.fragmen.PregFrecFragment"
+        android:label="@string/textAtenC"
+        tools:layout="@layout/fragment_preg_frec" />
+
+    <fragment
+        android:id="@+id/frag_atenC"
+        android:name="com.example.like_app.ui.fragmen.AtenClientFragment"
+        android:label="@string/textAtenC"
+        tools:layout="@layout/fragment_aten_client" />
+
+
 </navigation>

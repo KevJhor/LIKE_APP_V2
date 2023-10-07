@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragmen.PregFrecFragment">
+
+    <!-- Layout principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#5BDFD3"
+        android:gravity="center_horizontal">
+
+
+
+        <!-- Sección inferior (7/8 de la pantalla) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:gravity="center_horizontal">
+
+            <!-- Texto "Preguntas Frecuentes" -->
+            <TextView
+                android:id="@+id/textFAQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="Preguntas Frecuentes"
+                android:textSize="24sp" />
+
+            <!-- Botón 1 -->
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/butAcerPed"
+                android:textSize="18dp"/>
+
+            <!-- Botón 2 -->
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/butAcerPagos"
+                android:textSize="18dp"/>
+
+            <!-- Botón 3 -->
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/butAcerPerf"
+                android:textSize="18dp"/>
+
+            <!-- Botón 4 -->
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/butAcerEntr"
+                android:textSize="18dp"/>
+
+            <!-- Botón 5 -->
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/butAcerPrecios"
+                android:textSize="18dp"/>
+
+            <!-- Botón "Contactar a un asesor" -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Contactar a un asesor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragmen.AtenClientFragment">
+
+    <!-- Layout principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#5BDFD3">
+
+
+
+        <!-- Sección inferior (7/8 de la pantalla) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <!-- Texto "Realiza la calificación del servicio" -->
+            <TextView
+                android:id="@+id/textCalificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="Califica tu atención"
+                android:textColor="#000000"
+                android:textSize="28sp" />
+
+            <!-- Imagen (puedes ajustar las propiedades de la imagen) -->
+            <ImageView
+                android:layout_width="298dp"
+                android:layout_height="277dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/call" />
+
+            <!-- RatingBar -->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:stepSize="1"
+                android:scaleX="1.5"
+                android:scaleY="1.5"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="212dp"
+                android:layout_height="69dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="#009688"
+                android:textColor="#000000"
+                android:text="Button" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+

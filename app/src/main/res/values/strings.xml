@@ -10,4 +10,22 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="Inicio">Inicio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Tambo">Tambo</string>
+    <string name="Cat_Minimarketing">Minimarketing</string>
+    <string name="TiempoE_Tambo">45-65 min - Envío S/3.5</string>
+    <string name="Ir">Ir</string>
+
+    <string name="AtencionCliente">Atencion al cliente</string>
+
+
+    <string name="butAcerPagos">Acerca de pagos</string>
+    <string name="butAcerPed">Acerca de pedidos</string>
+    <string name="butAcerPerf">Acerca de mi perfil</string>
+    <string name="butAcerEntr">Acerca de entregas</string>
+    <string name="butAcerPrecios">Acerca de precios</string>
+
+    <string name="textAtenC">Atención al cliente</string>
 </resources>
