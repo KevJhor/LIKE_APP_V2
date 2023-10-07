@@ -124,7 +124,6 @@
     <RelativeLayout
         android:layout_width="387dp"
         android:layout_height="241dp"
-        android:background="@drawable/rectangle_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

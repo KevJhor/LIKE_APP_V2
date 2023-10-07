@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="341dp"
+        android:layout_height="361dp"
+        android:layout_marginBottom="352dp"
+        android:background="@drawable/containerbox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btncredito"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#FFFFFF"
+            android:drawableLeft="@drawable/tarjeta"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/valtxtcredito"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btndepcuenta" />
+
+        <Button
+            android:id="@+id/btndebito"
+            android:layout_width="263dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#FDFDFD"
+            android:drawableLeft="@drawable/tarjeta"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/valtxtdebito"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btndepcuenta"
+            android:layout_width="260dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#FEFEFE"
+            android:drawableLeft="@drawable/bank"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/valtxtdeposito"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btndebito" />
+
+        <TextView
+            android:id="@+id/tvtarjetauso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="208dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/valtvtarjetauso"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btncredito"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="255dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="60dp"
+            app:helperTextEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btncredito">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle1"
+                android:clickable="false"
+                android:drawableStart="@drawable/tarjeta"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/poppinslight"
+                android:hint="@string/valhintnotarjeta"
+                android:paddingBottom="20dp"
+                android:textSize="12sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnaddtarjeta"
+        style="@style/Theme.LIKE_APP.buttons"
+        android:layout_width="264dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#2DB78C"
+        android:drawableLeft="@drawable/cardsmaller"
+        android:insetLeft="0dp"
+        android:paddingLeft="70dip"
+        android:paddingRight="70dip"
+        android:text="@string/valbtnpagar"
+        android:textColor="@color/black"
+        android:textColorHighlight="#00BCD4"
+        android:textColorLink="#00BCD4"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="343dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

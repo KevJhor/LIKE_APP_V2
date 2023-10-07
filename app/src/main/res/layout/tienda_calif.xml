@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="558dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="252dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:inputType="text"
+        android:text="Buen servicio 9/10"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:id="@+id/tvuser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User1594"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="532dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="408dp"
+        android:layout_height="309dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="418dp"
+            android:layout_height="309dp"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/starbucks"
+            tools:layout_editor_absoluteX="-5dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:srcCompat="@drawable/starbucks" />
+
+        <TextView
+            android:id="@+id/tvnametienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Starbucks"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="208dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvcalificar"
+        android:layout_width="124dp"
+        android:layout_height="24dp"
+        android:text="Calificar tienda"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="242dp"
+        android:layout_height="46dp"
+        android:numStars="5"
+        android:rating="4"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="378dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="470dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User2154"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="444dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="252dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:inputType="text"
+        android:text="Buen servicio"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="472dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

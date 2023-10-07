@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/estado_de_e"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="59dp"
+        android:fontFamily="@font/manrope_medium"
+        android:gravity="top"
+        android:lineSpacingExtra="20sp"
+        android:text="@string/valtvestadoentrega"
+        android:textAppearance="@style/estado_de_e"
+        android:translationY="-10.14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="376dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/entrega"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estado_de_e">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="240dp"
+        android:text="@string/valtvmoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="325dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/txtllenar3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="201dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="104dp"
+        android:fontFamily="@font/manrope_medium"
+        android:text="@string/valbtnmap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="218dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/valbtnhome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
