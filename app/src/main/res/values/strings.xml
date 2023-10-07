@@ -10,6 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_frag_frec">Slideshow</string>
     <string name="Inicio">Inicio</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -28,4 +29,68 @@
     <string name="butAcerPrecios">Acerca de precios</string>
 
     <string name="textAtenC">Atención al cliente</string>
+
+
+    <!--   PARTE ISABELLA           -->
+
+    <string name="inicio">Inicio</string>
+    <string name="vuelve_a_la">Vuelve a la ventana de inicio</string>
+    <string name="hint_confirm_password">Confirmar Contraseña</string>
+    <string name="hint_brand_name">Nombre de la Marca</string>
+    <string name="button_register">Registrar</string>
+    <string name="hint_name">Nombre</string>
+    <string name="hint_surname">Apellido</string>
+    <string name="hint_email">Correo Electrónico</string>
+    <string name="hint_phone">Teléfono</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_address">Dirección</string>
+    <string name="hint_address_reference">Referencia de Dirección</string>
+    <!--   PARTE LUIS          -->
+    <string name="title_inicio">Inicio</string>
+    <string name="title_servicios">Nuestros servicios</string>
+
+
+    <!--   PARTE LUIS           -->
+
+    <!-- PARA LISTA RESTAURANTE -->
+    <string name="buscar">
+        Buscar</string>
+
+    <string name="titleFragmentRest">Restaurantes</string>
+    <string name="titleRest">Titulo de prueba</string>
+    <string name="infoRest">Info de prueba</string>
+    <string name="filtroPolleria">Polleria</string>
+    <string name="filtroPizza">Pizza</string>
+    <string name="filtroChifa">Chifa</string>
+    <string name="gestionlblmenu">Menus</string>
+    <string name="gestionlblordenes">Mis Ordenes</string>
+    <string name="gestionlblnotificaciones">Notificaciones</string>
+
+    <string name="categorias_">Categorias menus</string>
+
+    <string name="lblItemMenu1">Menu 1</string>
+    <string name="lblItemMenu2">Menu 2</string>
+    <string name="lblItemMenu3">Menu 3</string>
+    <string name="lblItemMenu4">Menu 4</string>
+
+    <string name="crea_o_modi">
+Crea o modifica las categorias menus
+</string>
+
+
+    <style name="title_rest">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="categorias_">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <!-- styles.xml -->
+    <style name="crea_o_modi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#9FA4AB</item>
+    </style>
+    <!-- strings.xml -->
 </resources>

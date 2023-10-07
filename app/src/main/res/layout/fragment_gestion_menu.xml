@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Gestion.GestionMenus">
+
+
+    <View
+        android:id="@+id/view11"
+        android:layout_width="384dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/imgrectanglemenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/categorias_"
+        android:layout_width="226dp"
+        android:layout_height="27dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="top"
+        android:lineSpacingExtra="10sp"
+        android:text="@string/categorias_"
+        android:textAppearance="@style/categorias_"
+        app:layout_constraintBottom_toTopOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="332dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="244dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/crea_o_modi"
+        android:layout_width="273dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/crea_o_modi"
+        android:textAppearance="@style/crea_o_modi"
+        app:layout_constraintBottom_toBottomOf="@+id/view11"
+        app:layout_constraintStart_toStartOf="@+id/view11"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="87dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Crear"
+        app:layout_constraintEnd_toEndOf="@+id/view11"
+        app:layout_constraintTop_toTopOf="@+id/view11" />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="396dp"
+        android:layout_height="457dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/imgrectanglemenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view11"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Agregar"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Modificar"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="360dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_3" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="357dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_3" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="360dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="ID menu"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="150dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:ems="10"
+        android:hint="Precio"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText5"
+        android:layout_width="150dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Tiempo"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

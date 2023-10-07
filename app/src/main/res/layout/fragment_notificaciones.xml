@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.servicios.Notificaciones" >
+
+
+    <View
+        android:id="@+id/view10"
+        android:layout_width="378dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etBuscar2"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/buscar"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="@+id/view10" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="44dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:background="?android:attr/actionModeWebSearchDrawable"
+        app:layout_constraintStart_toStartOf="@+id/view10"
+        app:layout_constraintTop_toTopOf="@+id/view10">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="376dp"
+            android:layout_height="338dp">
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="389dp"
+        android:layout_height="229dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.774">
+
+        <RelativeLayout
+            android:layout_width="357dp"
+            android:layout_height="155dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="51dp">
+
+            <View
+                android:id="@+id/view14"
+                android:layout_width="121dp"
+                android:layout_height="117dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/imgordenprueba" />
+
+            <TextView
+
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="33dp"
+                android:text="Orden01"
+                android:textAppearance="@style/title_rest" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="2dp"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="149dp"
+                android:layout_marginBottom="2dp"
+                android:text="Recibir" />
+
+            <TextView
+
+                android:layout_width="197dp"
+                android:layout_height="64dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="17dp"
+                android:text="Direccion" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="387dp"
+        android:layout_height="241dp"
+        android:background="@drawable/rectangle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="357dp"
+            android:layout_height="155dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="51dp">
+
+            <View
+
+                android:layout_width="121dp"
+                android:layout_height="117dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/imgordenprueba" />
+
+            <TextView
+
+                android:layout_width="183dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="33dp"
+                android:text="Orden01"
+                android:textAppearance="@style/title_rest" />
+
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="22dp"
+                android:layout_marginBottom="2dp"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/btnRecibir"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="149dp"
+                android:layout_marginBottom="2dp"
+                android:text="Recibir" />
+
+            <TextView
+
+                android:layout_width="197dp"
+                android:layout_height="64dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="17dp"
+                android:text="Direccion" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
