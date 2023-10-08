@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import com.example.like_app.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +37,19 @@ class GestionMenus : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gestion_menu, container, false)
+        val view: View =inflater.inflate(R.layout.fragment_gestion_menu, container, false)
+        val spnCategorias:Spinner= view.findViewById(R.id.spnCategorias)
+        // BLOQUE DE CODIGO PARA LLENAR SPINNER CATEGORIA:
+        ArrayAdapter.createFromResource(
+            requireContext(),R.array.listCategorias,android.R.layout.simple_spinner_item
+        ).also {
+            adapter-> adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spnCategorias.adapter=adapter
+        }
+
+
+
+        return view
     }
 
     companion object {
