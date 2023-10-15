@@ -47,17 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPortada" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="348dp"
-        android:layout_height="143dp"
-        android:background="@drawable/rectangle_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="188dp"
@@ -226,63 +215,6 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="299dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2">
-
-        <View
-            android:id="@+id/view5"
-            android:layout_width="112dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/imgmenuejemplo" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="176dp"
-            android:layout_height="35dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="76dp"
-            android:text="Combo especial " />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="172dp"
-            android:layout_height="53dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="21dp"
-            android:text="Pizza mediana de especialidad, acompañamiento y bebida 250 ml ...." />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="118dp"
-            android:layout_marginBottom="-1dp"
-            android:text="S/. 35" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="0dp"
-            android:text="30-40min" />
-    </RelativeLayout>
-
     <TextView
         android:id="@+id/textView17"
         android:layout_width="58dp"
@@ -292,5 +224,14 @@
         android:background="@drawable/addimg"
         app:layout_constraintStart_toStartOf="@+id/viewLogo"
         app:layout_constraintTop_toTopOf="@+id/viewLogo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="381dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

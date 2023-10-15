@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
+import com.example.like_app.adapter.ItemMenuAdapter
+import com.example.like_app.adapter.RestauranteAdapter
+import com.example.like_app.model.ItemMenu
+import com.example.like_app.model.RestauranteModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,9 +41,32 @@ class ListaRestaurantes : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_restaurantes, container, false)
+        val view=inflater.inflate(R.layout.fragment_lista_restaurantes, container, false)
+        val rvListRestaurante: RecyclerView =view.findViewById(R.id.rvRestaurante)
+        rvListRestaurante.layoutManager= LinearLayoutManager(requireContext())
+        rvListRestaurante.adapter= RestauranteAdapter(listRestaurantes())
+        return view
     }
 
+
+
+
+
+
+    private fun listRestaurantes():List<RestauranteModel>{
+        val listItems:ArrayList<RestauranteModel> = ArrayList()
+        listItems.add(RestauranteModel(1,"Citrico","25-30 min", "S/ 6", R.drawable.citrico))
+        listItems.add(RestauranteModel(2,"KFC","25-30 min", "S/ 4", R.drawable.kfc))
+        listItems.add(RestauranteModel(3,"Rest 3","25-30 min", "S/ 5", R.drawable.banner))
+        listItems.add(RestauranteModel(4,"Rest 4","30-10", "S/ 7", R.drawable.banner))
+        listItems.add(RestauranteModel(5,"Rest 5","15-20 min", "S/ 8", R.drawable.banner))
+
+
+
+
+
+        return listItems
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
