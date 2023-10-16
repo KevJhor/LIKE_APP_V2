@@ -5,11 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.view.menu.MenuAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.adapter.ItemMenuAdapter
 import com.example.like_app.model.ItemMenu
+import com.example.like_app.model.MenuModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,6 +48,11 @@ class GestionRestaurante : Fragment() {
         rvItems.layoutManager=LinearLayoutManager(requireContext())
         rvItems.adapter=ItemMenuAdapter(listItems())
 
+        val rvbtnmenus:RecyclerView=view.findViewById(R.id.rvBtnMenus)
+        rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listMenus())
+
+
         return view
     }
     private fun listItems():List<ItemMenu>{
@@ -65,6 +75,21 @@ class GestionRestaurante : Fragment() {
         return listItems
     }
 
+    private fun listMenus():List<MenuModel>{
+        val listItems:ArrayList<MenuModel> = ArrayList()
+        listItems.add(MenuModel(1,"Menu 1"))
+        listItems.add(MenuModel(2,"Menu 2"))
+        listItems.add(MenuModel(3,"Menu 3"))
+        listItems.add(MenuModel(4,"Menu 4"))
+        listItems.add(MenuModel(5,"Menu 5"))
+        listItems.add(MenuModel(6,"Menu 6"))
+        listItems.add(MenuModel(7,"Menu 7"))
+
+
+
+
+        return listItems
+    }
     companion object {
 
         @JvmStatic
