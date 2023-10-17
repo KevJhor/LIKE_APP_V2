@@ -37,8 +37,8 @@ class List_Rest_Fragment : Fragment() {
    private fun ListEstablecimiento(): List<model_estab>{
         val lstEstab: ArrayList<model_estab> = ArrayList()
 
-        lstEstab.add(model_estab(1,R.drawable.tambo,"TAMBO","Market","15 min",3.00))
-        lstEstab.add(model_estab(2,R.drawable.imagen2kfc,"KFC","Restaurante","30 min",3.50))
+        lstEstab.add(model_estab(1,R.drawable.tambo,"TAMBO","Market"))
+        lstEstab.add(model_estab(2,R.drawable.imagen2kfc,"KFC","Restaurante"))
 
 
         return lstEstab
