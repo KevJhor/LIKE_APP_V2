@@ -7,10 +7,11 @@
 
     <TextView
         android:id="@+id/tvdeposito"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
         android:text="@string/valtvcddeposito"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,10 +19,9 @@
 
     <TextView
         android:id="@+id/tvnumcard"
-        android:layout_width="482dp"
+        android:layout_width="380dp"
         android:layout_height="90dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="168dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/rectangle1"
         android:paddingTop="20dp"
         android:text="@string/valcardpagar"
@@ -31,29 +31,33 @@
         app:flow_horizontalAlign="center"
         app:flow_verticalAlign="baseline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvdeposito" />
 
     <TextView
         android:id="@+id/textView4"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
         android:text="@string/valtvsubir"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvnumcard" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="157dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:textAllCaps="false"
         android:backgroundTint="#FF2DB78C"
         android:text="@string/valbtnsubir"
-        android:textSize="10sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -111,12 +115,15 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="277dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="268dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="44dp"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:backgroundTint="#FF2DB78C"
         android:text="@string/valbtnconf"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
