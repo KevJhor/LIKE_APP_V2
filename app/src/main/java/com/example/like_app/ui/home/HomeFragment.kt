@@ -7,17 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import com.example.like_app.R
 import com.example.like_app.databinding.FragmentHomeBinding
 import com.example.like_app.ui.fragmen.List_Rest_Fragment
 import com.example.like_app.ui.gallery.GalleryFragment
-import com.example.like_app.ui.servicios.ListaRestaurantes
 
 class HomeFragment : Fragment() {
 
@@ -31,18 +30,30 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-
-
-
     ): View {
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        val rlListRest:RelativeLayout = root.findViewById(R.id.rlListRest)
-        rlListRest.setOnClickListener {
-            findNavController().navigate(R.id.action_nav_home_to_listaRestaurantes)
+        val imgRelativeLayout = root.findViewById<RelativeLayout>(R.id.imgR)
+        val imgRelativeLayoutT = root.findViewById<RelativeLayout>(R.id.imgT)
+
+
+        imgRelativeLayout.setOnClickListener {
+            // Obtén una referencia al NavController
+            val navController = Navigation.findNavController(root)
+
+            // Realiza la transición al otro fragmento (reemplaza 'fragmentB' con el ID de tu fragmento de destino)
+            navController.navigate(R.id.listaRestaurantes)
+        }
+
+        imgRelativeLayoutT.setOnClickListener {
+            // Obtén una referencia al NavController
+            val navController = Navigation.findNavController(root)
+
+            // Realiza la transición al otro fragmento (reemplaza 'fragmentB' con el ID de tu fragmento de destino)
+            navController.navigate(R.id.listaTiendas2)
         }
 
 

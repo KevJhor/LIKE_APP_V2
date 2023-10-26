@@ -1,98 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="#FFFFFF">
 
-    <!-- Nombre -->
-    <EditText
-        android:id="@+id/etClientName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_name"
-        android:inputType="textPersonName" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <!-- Apellido -->
-    <EditText
-        android:id="@+id/etClientSurname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientName"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_surname"
-        android:inputType="textPersonName" />
+        <!-- Título "Regístrate" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regístrate"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
 
-    <!-- Correo Electrónico -->
-    <EditText
-        android:id="@+id/etClientEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientSurname"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_email"
-        android:inputType="textEmailAddress" />
+        <!-- Campo de Nombre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
-    <!-- Teléfono -->
-    <EditText
-        android:id="@+id/etClientPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientEmail"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_phone"
-        android:inputType="phone" />
+        <EditText
+            android:id="@+id/etClientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu nombre"
+            android:inputType="textPersonName"
+            android:backgroundTint="#3EBE96"/>
 
-    <!-- Contraseña -->
-    <EditText
-        android:id="@+id/etClientPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientPhone"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_password"
-        android:inputType="textPassword" />
+        <!-- Campo de Apellido -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apellido:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
-    <!-- Confirmar Contraseña -->
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientPassword"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_confirm_password"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/etClientSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu apellido"
+            android:inputType="textPersonName"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Dirección -->
-    <EditText
-        android:id="@+id/etClientAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etConfirmPassword"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_address"
-        android:inputType="textMultiLine" />
+        <!-- Campo de Correo Electrónico -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo Electrónico:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
 
-    <!-- Referencia de Dirección -->
-    <EditText
-        android:id="@+id/etAddressReference"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etClientAddress"
-        android:layout_marginTop="16dp"
-        android:hint="@string/hint_address_reference"
-        android:inputType="textMultiLine" />
+        <EditText
+            android:id="@+id/etClientEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu correo electrónico"
+            android:inputType="textEmailAddress"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
 
-    <!-- Botón para Registrar -->
-    <Button
-        android:id="@+id/btnClientRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etAddressReference"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#3EBE96"
-        android:text="@string/button_register"
-        android:textColor="#FFFFFF" />
-</RelativeLayout>
+        <!-- Campo de Teléfono -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etClientPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu teléfono"
+            android:inputType="phone"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Campo de Contraseña -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etClientPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu contraseña"
+            android:inputType="textPassword"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Campo de Confirmar Contraseña -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirmar Contraseña:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirma tu contraseña"
+            android:inputType="textPassword"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Campo de Nombre de la Marca -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dirección:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/etClientBrandName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu dirección"
+            android:inputType="text"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Botón de Registro -->
+        <Button
+            android:id="@+id/btnClientRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:backgroundTint="#3EBE96"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
+
 
 
