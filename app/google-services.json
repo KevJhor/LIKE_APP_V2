@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "80104310124",
+    "firebase_url": "https://like-app-cddb7-default-rtdb.firebaseio.com",
+    "project_id": "like-app-cddb7",
+    "storage_bucket": "like-app-cddb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80104310124:android:53809bc2d774b1faa39f49",
+        "android_client_info": {
+          "package_name": "com.example.like_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2FlHUE2IvWFhJL4Bo8eeJTqWXy-UtmaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
