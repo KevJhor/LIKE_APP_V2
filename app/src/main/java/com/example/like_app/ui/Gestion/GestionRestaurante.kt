@@ -5,7 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.view.menu.MenuAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
+import com.example.like_app.adapter.ItemMenuAdapter
+import com.example.like_app.model.ItemMenu
+import com.example.like_app.model.MenuModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,20 +43,55 @@ class GestionRestaurante : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gestion_restaurantes, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_gestion_restaurantes, container, false)
+        val rvItems:RecyclerView=view.findViewById(R.id.rvItems)
+        rvItems.layoutManager=LinearLayoutManager(requireContext())
+        rvItems.adapter=ItemMenuAdapter(listItems())
+
+        val rvbtnmenus:RecyclerView=view.findViewById(R.id.rvBtnMenus)
+        rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listMenus())
+
+
+        return view
+    }
+    private fun listItems():List<ItemMenu>{
+        val listItems:ArrayList<ItemMenu> = ArrayList()
+        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Combo especial","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
+            "S/. 35","30-40 min"))
+
+        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 1","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
+            "S/. 20","15-20 min"))
+
+        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 2","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
+            "S/. 15","40-50 min"))
+
+        listItems.add(ItemMenu(R.drawable.kfc,"Titulo 3","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
+            "S/. 40","20-40 min"))
+        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 4","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
+            "S/. 10","25-30 min"))
+
+
+        return listItems
     }
 
+    private fun listMenus():List<MenuModel>{
+        val listItems:ArrayList<MenuModel> = ArrayList()
+        listItems.add(MenuModel(1,"Menu 1"))
+        listItems.add(MenuModel(2,"Menu 2"))
+        listItems.add(MenuModel(3,"Menu 3"))
+        listItems.add(MenuModel(4,"Menu 4"))
+        listItems.add(MenuModel(5,"Menu 5"))
+        listItems.add(MenuModel(6,"Menu 6"))
+        listItems.add(MenuModel(7,"Menu 7"))
+
+
+
+
+        return listItems
+    }
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GestionRestaurantes.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             GestionRestaurante().apply {

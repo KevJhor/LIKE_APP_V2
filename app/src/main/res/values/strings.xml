@@ -75,7 +75,12 @@
     <string name="crea_o_modi">
 Crea o modifica las categorias menus
 </string>
-
+    <string-array name="listCategorias">
+        <item> </item>
+        <item>Entradas</item>
+        <item>Plato Principal</item>
+        <item>Postres</item>
+    </string-array>
 
     <style name="title_rest">
         <item name="android:textSize">20sp</item>

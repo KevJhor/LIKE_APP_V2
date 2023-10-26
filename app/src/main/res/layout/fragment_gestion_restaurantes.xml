@@ -47,17 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPortada" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="348dp"
-        android:layout_height="143dp"
-        android:background="@drawable/rectangle_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="188dp"
@@ -127,161 +116,119 @@
         app:layout_constraintStart_toEndOf="@+id/button5"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="411dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="372dp"
-        android:background="@drawable/rectangle_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <View
-            android:id="@+id/view7"
-            android:layout_width="58dp"
-            android:layout_height="28dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="129dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/imgbtnmenu" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="42dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/view7"
-            android:layout_alignBottom="@+id/view7"
-            android:layout_marginEnd="9dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/lblItemMenu2"
-            android:textSize="12sp" />
 
 
-        <View
-            android:id="@+id/view8"
-            android:layout_width="58dp"
-            android:layout_height="28dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="226dp"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/imgbtnmenu" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="42dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/view8"
-            android:layout_alignBottom="@+id/view8"
-            android:layout_marginEnd="9dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/lblItemMenu3"
-            android:textSize="12sp" />
-
-        <View
-            android:id="@+id/view9"
-            android:layout_width="58dp"
-            android:layout_height="28dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="325dp"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/imgbtnmenu" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="42dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/view9"
-            android:layout_alignBottom="@+id/view9"
-            android:layout_marginEnd="9dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/lblItemMenu4"
-            android:textSize="12sp" />
-
-        <View
-            android:id="@+id/view6"
-            android:layout_width="58dp"
-            android:layout_height="28dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="7dp"
-            android:background="@drawable/imgbtnmenu" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="42dp"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/view6"
-            android:layout_alignBottom="@+id/view6"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="7dp"
-            android:text="@string/lblItemMenu1"
-            android:textSize="12sp" />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="299dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2">
-
-        <View
-            android:id="@+id/view5"
-            android:layout_width="112dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/imgmenuejemplo" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="176dp"
-            android:layout_height="35dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="76dp"
-            android:text="Combo especial " />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="172dp"
-            android:layout_height="53dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="21dp"
-            android:text="Pizza mediana de especialidad, acompañamiento y bebida 250 ml ...." />
-
-        <TextView
-            android:id="@+id/textView7"
+        <!--
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="118dp"
-            android:layout_marginBottom="-1dp"
-            android:text="S/. 35" />
+            android:layout_height="46dp"
+            android:layout_marginTop="372dp"
+            android:background="@drawable/rectangle_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="0dp"
-            android:text="30-40min" />
-    </RelativeLayout>
+            <View
+                android:id="@+id/view7"
+                android:layout_width="58dp"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="129dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/imgbtnmenu" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/view7"
+                android:layout_alignBottom="@+id/view7"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="7dp"
+                android:text="@string/lblItemMenu2"
+                android:textSize="12sp" />
+
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="58dp"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="226dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/imgbtnmenu" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/view8"
+                android:layout_alignBottom="@+id/view8"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="7dp"
+                android:text="@string/lblItemMenu3"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="58dp"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="325dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/imgbtnmenu" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/view9"
+                android:layout_alignBottom="@+id/view9"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="7dp"
+                android:text="@string/lblItemMenu4"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="58dp"
+                android:layout_height="28dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/imgbtnmenu" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/view6"
+                android:layout_alignBottom="@+id/view6"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="7dp"
+                android:text="@string/lblItemMenu1"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="56dp"
+                android:layout_height="36dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="418dp"
+                android:layout_marginTop="5dp"
+                android:text="Button" />
+
+
+        </RelativeLayout>
+        -->
+
 
     <TextView
         android:id="@+id/textView17"
@@ -292,5 +239,27 @@
         android:background="@drawable/addimg"
         app:layout_constraintStart_toStartOf="@+id/viewLogo"
         app:layout_constraintTop_toTopOf="@+id/viewLogo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="407dp"
+        android:layout_height="311dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvBtnMenus" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBtnMenus"
+        android:layout_width="375dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
