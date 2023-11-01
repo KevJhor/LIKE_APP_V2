@@ -127,4 +127,5 @@ Crea o modifica las categorias menus
     <string name="valtvestadoentrega">Estado de entrega</string>
     <string name="valbtnmap">Seguir en mapa</string>
     <string name="valbtnhome">HOME</string>
+    <string name="btnOpiniones">Opiniones</string>
 </resources>
