@@ -137,6 +137,22 @@
             android:inputType="text"
             android:backgroundTint="#3EBE96"
             android:layout_marginTop="8dp"/>
+<!--Campo de Ruc-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numero de RUC:"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/editTextRUC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa el número de RUC"
+            android:inputType="text"
+            android:backgroundTint="#3EBE96"
+            android:layout_marginTop="8dp"/>
+
 
         <!-- Botón de Registro -->
         <Button
@@ -147,6 +163,6 @@
             android:backgroundTint="#3EBE96"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="1mm"/>
     </LinearLayout>
 </ScrollView>
