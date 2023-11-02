@@ -22,9 +22,9 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>)
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestauranteAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater= LayoutInflater.from(parent.context)
-        return RestauranteAdapter.ViewHolder(layoutInflater.inflate(R.layout.item_restaurante, parent, false))
+        return ViewHolder(layoutInflater.inflate(R.layout.item_restaurante, parent, false))
     }
 
     override fun getItemCount(): Int {
