@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.ItemMenu
 import com.example.like_app.model.RestauranteModel
+import com.squareup.picasso.Picasso
 
 class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>)
     : RecyclerView.Adapter<RestauranteAdapter.ViewHolder>(){
@@ -32,7 +33,7 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>)
 
     override fun onBindViewHolder(holder: RestauranteAdapter.ViewHolder, position: Int) {
         val itemRest= lstRestaurantes[position]
-        holder.ivItemRest.setImageResource(itemRest.imgRest)
+        Picasso.get().load(itemRest.imageUrl).into(holder.ivItemRest)
         holder.tvNombreRest.text=itemRest.nombre
         holder.tvTiempoRest.text=itemRest.tiempo
         holder.tvPrecioEnvio.text=itemRest.precioEnvio
