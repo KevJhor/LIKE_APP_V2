@@ -1,6 +1,7 @@
 package com.example.like_app.ui.servicios
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
+import com.example.like_app.adapter.RestauranteAdapter
+import com.example.like_app.model.RestauranteModel
 import com.example.like_app.ui.adapter.estab_adapter
 import com.example.like_app.ui.adapter.rest_adapter
 import com.example.like_app.ui.model.model_estab

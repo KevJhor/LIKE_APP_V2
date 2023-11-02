@@ -15,6 +15,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginBottom="176dp"
         android:text="Registrate"
+        android:backgroundTint="#3EBE96"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -25,6 +26,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginBottom="112dp"
         android:text="Registrate con Gmail"
+        android:backgroundTint="#3EBE96"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -34,8 +36,8 @@
         android:layout_height="50dp"
         android:layout_marginEnd="72dp"
         android:layout_marginBottom="44dp"
-        android:backgroundTint="@color/gris"
         android:text="Registra tu Negocio"
+        android:backgroundTint="#3EBE96"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -46,4 +48,21 @@
         android:src="@drawable/logologin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRegisterPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="696dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="handleRegisterClick"
+        android:text="¿No tienes cuenta? Regístrate"
+        android:textColor="@color/colorLink"
+        android:textSize="21dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

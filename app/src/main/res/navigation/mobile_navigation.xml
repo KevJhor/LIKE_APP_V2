@@ -67,7 +67,7 @@
         android:id="@+id/login"
         android:name="com.example.like_app.ui.users.fragment_login"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/login_activity" />
     <fragment
         android:id="@+id/listaTiendas2"
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
