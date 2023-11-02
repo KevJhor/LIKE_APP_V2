@@ -15,7 +15,8 @@ import com.example.like_app.ui.adapter.estab_adapter
 import com.example.like_app.ui.adapter.rest_adapter
 import com.example.like_app.ui.model.model_estab
 import com.example.like_app.ui.model.model_rest
-import com.google.firebase.firestore.FirebaseFirestore
+
+
 
 
 class ListaRestaurantes : Fragment() {
@@ -27,37 +28,14 @@ class ListaRestaurantes : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_lista_restaurantes, container, false)
-        val db = FirebaseFirestore.getInstance()
+        val rvEstab: RecyclerView = view.findViewById(R.id.rc_rest)
+        view.importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_YES
 
-        var lstRest: List<RestauranteModel>
-        val rvRest: RecyclerView = view.findViewById(R.id.rc_rest)
-
-
-        db.collection("Restaurante")
-            .addSnapshotListener { snap, e ->
-                if (e != null) {
-                    Log.i("ERROR", "Ocurrio un Error")
-                    return@addSnapshotListener
-                }
-
-                lstRest = snap!!.documents.map { document ->
-                    RestauranteModel(
-                        document["nombre"].toString(),
-                        document["tiempo"].toString(),
-                        document["precio_envio"].toString(),
-                        document["imageUrl"].toString()
-
-                    )
-                }
-                Log.i("Print", lstRest.size.toString())
-
-                rvRest.adapter = RestauranteAdapter(lstRest)
-                rvRest.layoutManager = LinearLayoutManager(requireContext())
-            }
-
+        rvEstab.layoutManager = LinearLayoutManager(requireContext())
+        rvEstab.adapter = rest_adapter(ListRest())
         return view
     }
-    /*private fun ListRest(): List<model_rest>{
+    private fun ListRest(): List<model_rest>{
         val lstEstab: ArrayList<model_rest> = ArrayList()
 
         lstEstab.add(model_rest(1,R.drawable.productimabeef,"Restaurante","Esta es la descripcion del restaurante"))
@@ -65,8 +43,6 @@ class ListaRestaurantes : Fragment() {
         lstEstab.add(model_rest(3, R.drawable.imgmenuejemplo,"Restaurente","Esta es la descripcion del restaurante3"))
 
         return lstEstab
-    }*/
-
-
+    }
 }
 
