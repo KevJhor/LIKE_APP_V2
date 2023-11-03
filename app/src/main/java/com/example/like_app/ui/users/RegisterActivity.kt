@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -44,94 +45,94 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun registerUser() {
         // Obtener los valores ingresados por el usuario
-            val firstName = editTextFirstName.text.toString().trim()
-            val lastName = editTextLastName.text.toString().trim()
-            val email = editTextEmail.text.toString().trim()
-            val phone = editTextPhone.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
-            val confirmPassword = editTextConfirmPassword.text.toString().trim()
-            val brandName = editTextBrandName.text.toString().trim()
-            val ru = editTextRUC.text.toString().trim()
+        val firstName = editTextFirstName.text.toString().trim()
+        val lastName = editTextLastName.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
+        val phone = editTextPhone.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
+        val confirmPassword = editTextConfirmPassword.text.toString().trim()
+        val brandName = editTextBrandName.text.toString().trim()
+        val ru = editTextRUC.text.toString().trim()
 
-            // Validar los campos
-            if (firstName.isEmpty()) {
-                editTextFirstName.error = "El nombre es obligatorio"
-                return
-            }
+        // Validar los campos
+        if (firstName.isEmpty()) {
+            editTextFirstName.error = "El nombre es obligatorio"
+            return
+        }
         if (!firstName.matches(Regex("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$"))) {
             editTextFirstName.error = "El nombre solo debe contener letras"
             return
         }
 
-            if (lastName.isEmpty()) {
-                editTextLastName.error = "El apellido es obligatorio"
-                return
-            }
+        if (lastName.isEmpty()) {
+            editTextLastName.error = "El apellido es obligatorio"
+            return
+        }
         if (!lastName.matches(Regex("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$"))) {
             editTextLastName.error = "El apellido solo debe contener letras"
             return
         }
 
-            if (email.isEmpty()) {
-                editTextEmail.error = "El correo electrónico es obligatorio"
-                return
+        if (email.isEmpty()) {
+            editTextEmail.error = "El correo electrónico es obligatorio"
+            return
 
-            }
+        }
 
         if (!email.contains("@")) {
             editTextEmail.error = "Introduce un correo electrónico válido"
             return
         }
 
-            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                editTextEmail.error = "Introduce un correo electrónico válido"
-                return
-            }
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.error = "Introduce un correo electrónico válido"
+            return
+        }
 
-            if (phone.isEmpty()) {
-                editTextPhone.error = "El teléfono es obligatorio"
-                return
-            }
+        if (phone.isEmpty()) {
+            editTextPhone.error = "El teléfono es obligatorio"
+            return
+        }
         if (!phone.matches(Regex("\\d+"))) {
             editTextPhone.error = "El teléfono solo debe contener números"
             return
         }
 
-            if (password.isEmpty()) {
-                editTextPassword.error = "La contraseña es obligatoria"
-                return
-            }
+        if (password.isEmpty()) {
+            editTextPassword.error = "La contraseña es obligatoria"
+            return
+        }
 
-            if (password.length < 6) {
-                editTextPassword.error = "La contraseña debe tener al menos 6 caracteres"
-                return
-            }
+        if (password.length < 6) {
+            editTextPassword.error = "La contraseña debe tener al menos 6 caracteres"
+            return
+        }
 
-            if (confirmPassword.isEmpty()) {
-                editTextConfirmPassword.error = "Confirma tu contraseña"
-                return
-            }
+        if (confirmPassword.isEmpty()) {
+            editTextConfirmPassword.error = "Confirma tu contraseña"
+            return
+        }
 
-            if (password != confirmPassword) {
-                editTextConfirmPassword.error = "Las contraseñas no coinciden"
-                return
-            }
+        if (password != confirmPassword) {
+            editTextConfirmPassword.error = "Las contraseñas no coinciden"
+            return
+        }
 
-            if (brandName.isEmpty()) {
-                editTextBrandName.error = "El nombre de la marca es obligatorio"
-                return
-            }
+        if (brandName.isEmpty()) {
+            editTextBrandName.error = "El nombre de la marca es obligatorio"
+            return
+        }
 
-            if (ru.isEmpty()) {
-                editTextRUC.error = "El número de RUC es obligatorio"
-                return
-            }
+        if (ru.isEmpty()) {
+            editTextRUC.error = "El número de RUC es obligatorio"
+            return
+        }
         if (ru.length != 11) {
             editTextRUC.error = "El RUC debe tener 11 dígitos"
             return
         }
 
-            // Aquí puedes agregar la lógica para registrar al usuario, por ejemplo, guardar los datos en una base de datos o enviarlos a un servidor
+        // Aquí puedes agregar la lógica para registrar al usuario, por ejemplo, guardar los datos en una base de datos o enviarlos a un servidor
         val auth = FirebaseAuth.getInstance()
 
         // Registrar al usuario con correo electrónico y contraseña en Firebase Authentication
@@ -155,24 +156,28 @@ class RegisterActivity : AppCompatActivity() {
                     userId?.let {
                         db.collection("users").document(it).set(userMap)
                             .addOnSuccessListener {
-                                Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this,
+                                    "Usuario registrado con éxito",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                             .addOnFailureListener { e ->
-                                Toast.makeText(this, "Error al guardar información del usuario: ${e.message}", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this,
+                                    "Error al guardar información del usuario: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                     }
                 } else {
                     // Error al registrar al usuario
-                    Toast.makeText(this, "Error al registrar al usuario: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Error al registrar al usuario: ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
-
-
-
-    Toast.makeText(this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show()
-        }
-
-
-
-    }
+}
