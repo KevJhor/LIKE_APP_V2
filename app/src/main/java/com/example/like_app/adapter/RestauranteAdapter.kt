@@ -7,24 +7,36 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
-import com.example.like_app.model.ItemMenu
 import com.example.like_app.model.RestauranteModel
 import com.squareup.picasso.Picasso
 
-class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>)
+class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,private val listener:RecyclerViewEvent)
     : RecyclerView.Adapter<RestauranteAdapter.ViewHolder>(){
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView),View.OnClickListener {
+
         val ivItemRest: ImageView = itemView.findViewById(R.id.ivItemRest)
         val tvNombreRest: TextView = itemView.findViewById(R.id.tvNomRest)
         val tvTiempoRest: TextView = itemView.findViewById(R.id.tvTiempoRest)
         val tvPrecioEnvio: TextView = itemView.findViewById(R.id.tvPrecioEnvioRest)
 
+        init {
+            itemView.setOnClickListener(this)
+
+        }
+        override fun onClick(p0: View?) {
+            val position=adapterPosition
+            if(position!=RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
+
+        }
+
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestauranteAdapter.ViewHolder {
-        val layoutInflater= LayoutInflater.from(parent.context)
-        return RestauranteAdapter.ViewHolder(layoutInflater.inflate(R.layout.item_restaurante, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val inflateView:View=LayoutInflater.from(parent.context).inflate(R.layout.item_restaurante, parent, false)
+        return ViewHolder(inflateView)
     }
 
     override fun getItemCount(): Int {
@@ -37,8 +49,10 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>)
         holder.tvNombreRest.text=itemRest.nombre
         holder.tvTiempoRest.text=itemRest.tiempo
         holder.tvPrecioEnvio.text=itemRest.precioEnvio
+    }
 
-
+    interface RecyclerViewEvent {
+        fun onItemClick(position:Int)
     }
 
 }
