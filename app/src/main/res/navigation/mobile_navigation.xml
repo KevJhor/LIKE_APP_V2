@@ -3,77 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/login">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.like_app.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_nav_home_to_listaRestaurantes"
-            app:destination="@id/listaRestaurantes" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.like_app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.like_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
-        android:id="@+id/frag_estab"
-        android:name="com.example.like_app.ui.fragmen.List_Rest_Fragment"
-        android:label="@string/Inicio"
-        tools:layout="@layout/fragment_list__rest_" />
-
-    <fragment
-        android:id="@+id/frag_pregFrec"
-        android:name="com.example.like_app.ui.fragmen.PregFrecFragment"
-        android:label="@string/textAtenC"
-        tools:layout="@layout/fragment_preg_frec" />
-
-    <fragment
-        android:id="@+id/frag_atenC"
+        android:id="@+id/atenClientFragment"
         android:name="com.example.like_app.ui.fragmen.AtenClientFragment"
-        android:label="@string/textAtenC"
+        android:label="fragment_aten_client"
         tools:layout="@layout/fragment_aten_client" />
-    <fragment
-        android:id="@+id/gestionMenus"
-        android:name="com.example.like_app.ui.Gestion.GestionMenus"
-        android:label="fragment_gestion_menu"
-        tools:layout="@layout/fragment_gestion_menu" />
-    <fragment
-        android:id="@+id/listaRestaurantes"
-        android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
-        android:label="Restaurantes"
-        tools:layout="@layout/fragment_lista_restaurantes" />
     <fragment
         android:id="@+id/gestionRestaurante"
         android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
         android:label="fragment_gestion_restaurantes"
         tools:layout="@layout/fragment_gestion_restaurantes" />
     <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.like_app.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/list_Rest_Fragment"
+        android:name="com.example.like_app.ui.fragmen.List_Rest_Fragment"
+        android:label="fragment_list__rest_"
+        tools:layout="@layout/fragment_list__rest_" />
+    <fragment
         android:id="@+id/notificaciones"
         android:name="com.example.like_app.ui.servicios.Notificaciones"
         android:label="fragment_notificaciones"
         tools:layout="@layout/fragment_notificaciones" />
     <fragment
-        android:id="@+id/login"
-        android:name="com.example.like_app.ui.users.fragment_login"
-        android:label="fragment_login"
-        tools:layout="@layout/login_activity" />
+        android:id="@+id/pregFrecFragment"
+        android:name="com.example.like_app.ui.fragmen.PregFrecFragment"
+        android:label="fragment_preg_frec"
+        tools:layout="@layout/fragment_preg_frec" />
     <fragment
-        android:id="@+id/listaTiendas2"
+        android:id="@+id/listaRestaurantes"
+        android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
+        android:label="fragment_lista_restaurantes"
+        tools:layout="@layout/fragment_lista_restaurantes" />
+    <fragment
+        android:id="@+id/listaTiendas"
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
-        android:label="Tiendas"
+        android:label="fragment_lista_tiendas"
         tools:layout="@layout/fragment_lista_tiendas" />
-
-
-
 </navigation>

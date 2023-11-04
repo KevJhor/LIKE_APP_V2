@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
 
 
-
+        /*
         // Inicializar los botones y el TextView
         val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
         val btnRegisterEmail = findViewById<Button>(R.id.btnRegisterEmail)
@@ -62,5 +62,7 @@ class LoginActivity : AppCompatActivity() {
     private fun handleRegisterClick() {
         // Lógica cuando se hace clic en "¿No tienes cuenta? Regístrate"
         Toast.makeText(this, "Manejando clic en registro", Toast.LENGTH_SHORT).show()
+    }*/
     }
 }
+

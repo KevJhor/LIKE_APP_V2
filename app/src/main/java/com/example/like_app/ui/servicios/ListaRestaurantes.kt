@@ -64,7 +64,7 @@ class ListaRestaurantes : Fragment() {
         lstEstab.add(model_rest(3, R.drawable.imgmenuejemplo,"Restaurente","Esta es la descripcion del restaurante3"))
 
         return lstEstab
-    }
+    }*/
 
 }
 

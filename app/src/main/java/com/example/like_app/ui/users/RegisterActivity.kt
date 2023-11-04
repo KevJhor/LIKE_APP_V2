@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.R
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -23,10 +24,10 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_register)
+        setContentView(R.layout.activity_register)
 
         // Inicialización de las vistas
-        editTextFirstName = findViewById(R.id.editTextFirstName)
+        /*editTextFirstName = findViewById(R.id.editTextFirstName)
         editTextLastName = findViewById(R.id.editTextLastName)
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPhone = findViewById(R.id.editTextPhone)
@@ -39,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         // Establecer listener para el botón de registro
         buttonRegister.setOnClickListener {
             registerUser()
-        }
+        }*/
     }
 
     private fun registerUser() {
