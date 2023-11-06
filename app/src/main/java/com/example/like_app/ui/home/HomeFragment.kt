@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
             val navController = Navigation.findNavController(root)
 
             // Realiza la transición al otro fragmento (reemplaza 'fragmentB' con el ID de tu fragmento de destino)
-            navController.navigate(R.id.listaTiendas2)
+            navController.navigate(R.id.listaTiendas)
         }
 
 
