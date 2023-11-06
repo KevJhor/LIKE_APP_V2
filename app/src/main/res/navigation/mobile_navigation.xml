@@ -10,6 +10,20 @@
         android:label="fragment_aten_client"
         tools:layout="@layout/fragment_aten_client" />
     <fragment
+        android:id="@+id/gestionMenus"
+        android:name="com.example.like_app.ui.Gestion.GestionMenus"
+        android:label="fragment_gestion_menu"
+        tools:layout="@layout/fragment_gestion_menu" />
+    <fragment
+        android:id="@+id/listaRestaurantes"
+        android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
+        android:label="Restaurantes"
+        tools:layout="@layout/fragment_lista_restaurantes" >
+        <action
+            android:id="@+id/action_listaRestaurantes_to_restFragment"
+            app:destination="@id/restFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/gestionRestaurante"
         android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
         android:label="fragment_gestion_restaurantes"
@@ -35,15 +49,17 @@
         android:label="fragment_preg_frec"
         tools:layout="@layout/fragment_preg_frec" />
     <fragment
-        android:id="@+id/listaRestaurantes"
-        android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
-        android:label="fragment_lista_restaurantes"
-        tools:layout="@layout/fragment_lista_restaurantes" />
-    <fragment
         android:id="@+id/listaTiendas"
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
         android:label="fragment_lista_tiendas"
         tools:layout="@layout/fragment_lista_tiendas" />
+    <fragment
+        android:id="@+id/restFragment"
+        android:name="com.example.like_app.ui.fragmen.RestFragment"
+        android:label="fragment_rest"
+        tools:layout="@layout/fragment_rest" />
+
+
     <fragment
         android:id="@+id/chkdepoFragment"
         android:name="com.example.like_app.ui.payonline.ChkdepoFragment"
