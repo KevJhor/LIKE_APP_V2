@@ -49,11 +49,6 @@
         android:label="fragment_preg_frec"
         tools:layout="@layout/fragment_preg_frec" />
     <fragment
-        android:id="@+id/listaRestaurantes"
-        android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
-        android:label="fragment_lista_restaurantes"
-        tools:layout="@layout/fragment_lista_restaurantes" />
-    <fragment
         android:id="@+id/listaTiendas"
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
         android:label="fragment_lista_tiendas"
