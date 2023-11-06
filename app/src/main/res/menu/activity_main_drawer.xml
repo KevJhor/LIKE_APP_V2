@@ -5,26 +5,38 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/homeFragment"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/listaRestaurantes"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="@string/vallistRest" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/list_Rest_Fragment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/vallistRestFrag" />
         <item
-            android:id="@+id/frag_pregFrec"
+            android:id="@+id/listaTiendas"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Preguntas Frecuentes" />
+            android:title="@string/vallistTienda" />
 
+        <item
+            android:id="@+id/notificaciones"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Gestion Restaurante" />
+        <item
+            android:id="@+id/pregFrecFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/valpregFrec"/>
+        <item
+            android:id="@+id/atenClientFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/valatenClient"/>
         <item
             android:id="@+id/gestionRestaurante"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Gestion Restaurante" />
+            android:title="@string/valgestionRest"/>
 
     </group>
 </menu>
