@@ -44,4 +44,9 @@
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
         android:label="fragment_lista_tiendas"
         tools:layout="@layout/fragment_lista_tiendas" />
+    <fragment
+        android:id="@+id/chkdepoFragment"
+        android:name="com.example.like_app.ui.payonline.ChkdepoFragment"
+        android:label="fragment_chkdepo"
+        tools:layout="@layout/fragment_chkdepo" />
 </navigation>

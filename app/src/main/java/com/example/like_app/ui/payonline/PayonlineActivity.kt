@@ -19,6 +19,15 @@ class PayonlineActivity : AppCompatActivity() {
             val intent = Intent(this, DepositoActivity::class.java)
             startActivity(intent)
         }
+        btnaddcredito.setOnClickListener {
+            val intent = Intent(this, AddcardActivity::class.java)
+            startActivity(intent)
+        }
+        btnadddebito.setOnClickListener {
+            val intent = Intent(this, AddcardActivity::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }

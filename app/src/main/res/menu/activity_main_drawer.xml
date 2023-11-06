@@ -37,6 +37,10 @@
             android:id="@+id/gestionRestaurante"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/valgestionRest"/>
+        <item
+            android:id="@+id/chkdepoFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/valchkDepo"/>
 
     </group>
 </menu>

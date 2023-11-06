@@ -134,5 +134,7 @@ Crea o modifica las categorias menus
     <string name="vallistRest">Lista Restaurantes</string>
     <string name="vallistRestFrag">lista restaurantes fragment</string>
     <string name="vallistTienda">Lista de Tiendas</string>
+    <string name="valchkDepo">Validacion de deposito</string>
+    <string name="valbtnDetalle">Ver Orden</string>
 
 </resources>
