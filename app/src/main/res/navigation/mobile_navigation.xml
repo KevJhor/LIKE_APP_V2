@@ -52,7 +52,11 @@
         android:id="@+id/listaRestaurantes"
         android:name="com.example.like_app.ui.servicios.ListaRestaurantes"
         android:label="Restaurantes"
-        tools:layout="@layout/fragment_lista_restaurantes" />
+        tools:layout="@layout/fragment_lista_restaurantes" >
+        <action
+            android:id="@+id/action_listaRestaurantes_to_restFragment"
+            app:destination="@id/restFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gestionRestaurante"
         android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
@@ -73,7 +77,11 @@
         android:name="com.example.like_app.ui.servicios.ListaTiendas"
         android:label="Tiendas"
         tools:layout="@layout/fragment_lista_tiendas" />
-
+    <fragment
+        android:id="@+id/restFragment"
+        android:name="com.example.like_app.ui.fragmen.RestFragment"
+        android:label="fragment_rest"
+        tools:layout="@layout/fragment_rest" />
 
 
 </navigation>
