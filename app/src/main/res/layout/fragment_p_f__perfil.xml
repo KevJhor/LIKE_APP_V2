@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout8"
+    android:id="@+id/fgPperf"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragmen.PF_PerfilFragment">
@@ -19,12 +19,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/fgPperfi"
         android:layout_width="350dp"
-        android:layout_height="565dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:text="TextView"
+        android:text="\n
+        ¿Cómo puedo editar mi perfil?
+        \n\nPara editar tu perfil, ve a la sección 'Mi Perfil' en la aplicación y selecciona la opción de edición. Puedes actualizar tu información personal, como tu nombre, foto de perfil y contraseña.
+
+        \n\n¿Cómo puedo cambiar mi foto de perfil?
+        \n\nVe a la sección 'Mi Perfil', selecciona tu foto de perfil actual y tendrás la opción de cargar una nueva foto desde tu galería.
+
+        \n\n¿Puedo cambiar mi dirección de entrega en mi perfil?
+        \n\nSí, puedes editar y actualizar tu dirección de entrega en la sección 'Mi Perfil'. Asegúrate de guardar los cambios para que se reflejen en tus futuros pedidos.
+
+        \n\n¿Cómo puedo ver mi historial de pedidos?
+        \n\nTu historial de pedidos se encuentra en la sección 'Mi Perfil'. Allí podrás consultar y realizar un seguimiento de tus pedidos anteriores.
+
+        \n\n¿Cómo elimino mi cuenta?
+        \n\nSi deseas eliminar tu cuenta, por favor, ponte en contacto con nuestro servicio de atención al cliente para que te ayudemos a realizar este proceso.
+
+        \n\n¿Cómo puedo restablecer mi contraseña si la olvidé?
+        \n\nEn la página de inicio de sesión, selecciona '¿Olvidaste tu contraseña?' y sigue las instrucciones para restablecerla."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

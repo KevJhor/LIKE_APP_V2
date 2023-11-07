@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout7"
+    android:id="@+id/fgPpag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragmen.PF_PagosFragment">
@@ -19,15 +19,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="350dp"
-        android:layout_height="565dp"
+        android:id="@+id/fgPperfi"
+        android:layout_width="351dp"
+        android:layout_height="547dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:text="TextView"
+        android:text="Métodos de pago aceptados:\nAceptamos pagos en efectivo, tarjetas de crédito/débito y, en algunos casos, pagos en línea. Puedes seleccionar tu método de pago preferido al realizar tu pedido.\n\n
+Procesamiento del pago en línea:\nEl pago en línea se procesa de manera segura a través de nuestra plataforma. Debes ingresar la información de tu tarjeta de crédito/débito y seguir las instrucciones en la aplicación.\n\n
+Cargos adicionales por el uso de tarjetas de crédito:\nNo, no aplicamos cargos adicionales por el uso de tarjetas de crédito.\n\n
+División del pago entre varios métodos:\nActualmente, solo admitimos un método de pago por pedido.\n\n
+Solicitud de recibo de pago:\nSí, al finalizar tu pedido, recibirás un recibo de pago en la aplicación y por correo electrónico.\n\n
+Problemas con el pago:\nSi experimentas problemas con el pago, por favor, ponte en contacto con nuestro servicio de atención al cliente para recibir asistencia."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

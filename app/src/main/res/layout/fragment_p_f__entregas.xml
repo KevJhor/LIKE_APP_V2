@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/frameLayout6"
+    android:id="@+id/fgPEntrega"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragmen.PF_EntregasFragment" >
@@ -24,7 +24,7 @@
         android:layout_height="565dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:text="TextView"
+        android:text="¿Cuál es el tiempo estimado de entrega de mis pedidos?\n\nEl tiempo de entrega estimado varía según la ubicación y la carga de pedidos en un momento dado. Generalmente, intentamos entregar tus pedidos en un plazo de 30 a 45 minutos.\n\n¿Qué debo hacer si mi pedido se retrasa?\n\nSi experimentas un retraso en tu pedido, te recomendamos que te pongas en contacto con nuestro servicio de atención al cliente para obtener información sobre el estado de tu entrega.\n\n¿Cuáles son las tarifas de entrega?\n\nLas tarifas de entrega varían según la distancia y el restaurante. Puedes consultar las tarifas de entrega al realizar tu pedido antes de confirmarlo.\n\n¿Puedo rastrear mi pedido en tiempo real?\n\nSí, ofrecemos la función de seguimiento en tiempo real en la aplicación. Una vez que tu pedido esté en camino, podrás ver su ubicación en un mapa y seguirlo hasta tu puerta.\n\n¿Qué opciones de pago están disponibles?\n\nAceptamos pagos en efectivo, tarjetas de crédito/débito y, en algunos casos, pagos en línea. Puedes seleccionar tu método de pago preferido al realizar tu pedido.\n\n¿Se puede programar una entrega para un momento específico?\n\nSí, ofrecemos la opción de programar entregas para un momento específico. Puedes elegir la fecha y la hora que mejor te convenga al realizar tu pedido.\n\n¿Qué hago si mi pedido llega incorrecto o dañado?\n\nSi tu pedido llega incorrecto o dañado, por favor, ponte en contacto con nuestro servicio de atención al cliente de inmediato. Estaremos encantados de resolver cualquier problema que puedas tener."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
