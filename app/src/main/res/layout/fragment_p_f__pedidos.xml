@@ -5,7 +5,7 @@
     android:id="@+id/fgPpedi"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragmen.PF_PedidosFragment">
+    tools:context=".ui.fragments.PF_PedidosFragment">
 
     <TextView
         android:id="@+id/textView15"

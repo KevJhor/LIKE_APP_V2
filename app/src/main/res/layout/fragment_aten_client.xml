@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragmen.AtenClientFragment">
+    tools:context=".ui.fragments.AtenClientFragment">
 
     <!-- Layout principal -->
     <LinearLayout
@@ -48,9 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:stepSize="1"
                 android:scaleX="1.5"
-                android:scaleY="1.5"/>
+                android:scaleY="1.5"
+                android:stepSize="1" />
 
             <Button
                 android:id="@+id/button"
@@ -59,9 +59,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:background="#009688"
-                android:textColor="#000000"
-                android:text="Button" />
-
+                android:text="Button"
+                android:textColor="#000000" />
 
 
         </LinearLayout>

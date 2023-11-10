@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/atenClientFragment"
-        android:name="com.example.like_app.ui.fragmen.AtenClientFragment"
+        android:name="com.example.like_app.ui.fragments.AtenClientFragment"
         android:label="fragment_aten_client"
         tools:layout="@layout/fragment_aten_client" />
     <fragment
@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/list_Rest_Fragment"
-        android:name="com.example.like_app.ui.fragmen.List_Rest_Fragment"
+        android:name="com.example.like_app.ui.fragments.List_Rest_Fragment"
         android:label="fragment_list__rest_"
         tools:layout="@layout/fragment_list__rest_" />
     <fragment
@@ -45,7 +45,7 @@
         tools:layout="@layout/fragment_notificaciones" />
     <fragment
         android:id="@+id/pregFrecFragment"
-        android:name="com.example.like_app.ui.fragmen.PregFrecFragment"
+        android:name="com.example.like_app.ui.fragments.PregFrecFragment"
         android:label="fragment_preg_frec"
         tools:layout="@layout/fragment_preg_frec" />
     <fragment
@@ -55,7 +55,7 @@
         tools:layout="@layout/fragment_lista_tiendas" />
     <fragment
         android:id="@+id/restFragment"
-        android:name="com.example.like_app.ui.fragmen.RestFragment"
+        android:name="com.example.like_app.ui.fragments.RestFragment"
         android:label="fragment_rest"
         tools:layout="@layout/fragment_rest" />
 
@@ -68,35 +68,35 @@
 
     <fragment
         android:id="@+id/fgPEntrega"
-        android:name="com.example.like_app.ui.fragmen.PF_EntregasFragment"
+        android:name="com.example.like_app.ui.fragments.PF_EntregasFragment"
         android:label="Preguntas frecuentes. Entregas"
         tools:layout="@layout/fragment_p_f__entregas" />
 
     <fragment
         android:id="@+id/fgPpag"
-        android:name="com.example.like_app.ui.fragmen.PF_PagosFragment"
+        android:name="com.example.like_app.ui.fragments.PF_PagosFragment"
         android:label="Preguntas frecuentes. Pagos"
         tools:layout="@layout/fragment_p_f__pagos" />
 
     <fragment
         android:id="@+id/fgPpedi"
-        android:name="com.example.like_app.ui.fragmen.PF_PedidosFragment"
+        android:name="com.example.like_app.ui.fragments.PF_PedidosFragment"
         android:label="Preguntas frecuentes. Pedidos"
         tools:layout="@layout/fragment_p_f__pedidos" />
 
     <fragment
         android:id="@+id/fgPperfi"
-        android:name="com.example.like_app.ui.fragmen.PF_PerfilFragment"
+        android:name="com.example.like_app.ui.fragments.PF_PerfilFragment"
         android:label="Preguntas frecuentes. Perfil"
         tools:layout="@layout/fragment_p_f__perfil" />
     <fragment
         android:id="@+id/fgPpreci"
-        android:name="com.example.like_app.ui.fragmen.PF_PreciosFragment"
+        android:name="com.example.like_app.ui.fragments.PF_PreciosFragment"
         android:label="Preguntas frecuentes. Precios"
         tools:layout="@layout/fragment_p_f__precios" />
     <fragment
         android:id="@+id/fgChat"
-        android:name="com.example.like_app.ui.fragmen.ChatFragment"
+        android:name="com.example.like_app.ui.fragments.ChatFragment"
         android:label="Chat en linea"
         tools:layout="@layout/fragment_chat" />
 
