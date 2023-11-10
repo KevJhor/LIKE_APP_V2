@@ -59,7 +59,7 @@
         android:onClick="handleRegisterClick"
         android:text="¿No tienes cuenta? Regístrate"
         android:textColor="@color/colorLink"
-        android:textSize="21dp"
+        android:textSize="20sp"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

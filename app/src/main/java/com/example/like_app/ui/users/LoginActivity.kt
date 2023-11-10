@@ -1,5 +1,6 @@
 package com.example.like_app.ui.users
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -15,7 +16,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.login_activity)
 
 
-        /*
         // Inicializar los botones y el TextView
         val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
         val btnRegisterEmail = findViewById<Button>(R.id.btnRegisterEmail)
@@ -47,6 +47,8 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateToRegisterForm() {
         // Navegar a la pantalla de registro
         Toast.makeText(this, "Navegando al formulario de registro", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, RegisterActivity::class.java)
+        return startActivity(intent)
     }
 
     private fun registerWithGmail() {
@@ -62,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
     private fun handleRegisterClick() {
         // Lógica cuando se hace clic en "¿No tienes cuenta? Regístrate"
         Toast.makeText(this, "Manejando clic en registro", Toast.LENGTH_SHORT).show()
-    }*/
     }
+
 }
 
