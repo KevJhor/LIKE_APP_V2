@@ -1,49 +1,78 @@
 package com.example.like_app.ui.Gestion
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.HorizontalScrollView
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.view.menu.MenuAdapter
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.adapter.ItemMenuAdapter
+import com.example.like_app.model.DatosEmpresaModel
 import com.example.like_app.model.ItemMenu
 import com.example.like_app.model.MenuModel
+import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GestionRestaurante.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GestionRestaurante : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view:View = inflater.inflate(R.layout.fragment_gestion_restaurantes, container, false)
+        val ivLogo:ImageView=view.findViewById(R.id.ivLogo)
+        val ivPortada:ImageView=view.findViewById(R.id.ivPortada)
+        val brand_name="KFC"
+        val tvNombre:TextView=view.findViewById(R.id.tvBrandNameRest)
+        val tvHorario:TextView=view.findViewById(R.id.tvHorarioRest)
+        val tvDireccion:TextView=view.findViewById(R.id.tvDireccionRest)
+
+        val btnMenus:Button=view.findViewById(R.id.btnMenus)
+
+        val db=FirebaseFirestore.getInstance()
+        db.collection("datos_empresa")
+            .whereEqualTo("brand_name",brand_name)
+            .get().addOnSuccessListener {snap->
+                if(!snap.isEmpty){
+                    val document=snap.documents[0]
+                    val datosRest=DatosEmpresaModel(
+                        document["brand_name"].toString(),
+                        document["schedule"].toString(),
+                        document["address"].toString(),
+                        document["logo"].toString(),
+                        document["portada"].toString()
+                        )
+                    //Log.i("TAG", "url imagen ${datosRest.img_logo_url}")
+                    llenaDatos(datosRest,ivLogo,ivPortada,tvNombre,tvHorario,tvDireccion)
+
+
+
+                    //Log.i("TAG", "Documento encontrado con éxito: $document")
+
+                }
+
+            }.addOnFailureListener { exception ->
+                // Manejar errores
+               // Log.i("TAG", "Error al buscar el documento", exception)
+            }
+
+
+
+
         val rvItems:RecyclerView=view.findViewById(R.id.rvItems)
         rvItems.layoutManager=LinearLayoutManager(requireContext())
         rvItems.adapter=ItemMenuAdapter(listItems())
@@ -52,6 +81,11 @@ class GestionRestaurante : Fragment() {
         rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listMenus())
 
+        btnMenus.setOnClickListener{
+
+            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus)
+
+        }
 
         return view
     }
@@ -90,15 +124,14 @@ class GestionRestaurante : Fragment() {
 
         return listItems
     }
-    companion object {
 
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GestionRestaurante().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun llenaDatos(datos_rest:DatosEmpresaModel,ivLogo:ImageView,
+                           ivPortada:ImageView,tvNombre:TextView,tvHorario:TextView,tvDireccion:TextView){
+        Picasso.get().load(datos_rest.img_logo_url).into(ivLogo)
+        Picasso.get().load(datos_rest.img_portada_url).into(ivPortada)
+        tvNombre.text=datos_rest.brand_name
+        tvHorario.text=datos_rest.horario
+        tvDireccion.text=datos_rest.direccion
     }
+
 }
