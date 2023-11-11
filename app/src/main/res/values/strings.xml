@@ -136,6 +136,8 @@ Crea o modifica las categorias menus
     <string name="vallistTienda">Lista de Tiendas</string>
     <string name="valchkDepo">Validacion de deposito</string>
     <string name="valbtnDetalle">Ver Orden</string>
+    <string name="valetEmail">Correo</string>
+    <string name="valetPassword">Password</string>
     <string name="nombrePlato">Ingresa nombre del plato</string>
 
 </resources>

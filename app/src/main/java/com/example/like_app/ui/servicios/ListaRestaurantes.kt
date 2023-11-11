@@ -7,22 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.adapter.RestauranteAdapter
-import com.example.like_app.databinding.FragmentHomeBinding
 import com.example.like_app.databinding.FragmentListaRestaurantesBinding
 import com.example.like_app.model.RestauranteModel
-import com.example.like_app.ui.fragmen.RestFragment
-import com.example.like_app.ui.home.HomeViewModel
-import com.example.like_app.ui.model.model_rest
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.protobuf.Empty
 
 
 class ListaRestaurantes : Fragment() , RestauranteAdapter.RecyclerViewEvent {

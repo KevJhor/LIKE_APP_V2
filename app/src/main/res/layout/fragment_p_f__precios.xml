@@ -2,10 +2,54 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout9"
+    android:id="@+id/fgPpreci"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragmen.PF_PreciosFragment">
+    tools:context=".ui.fragments.PF_PreciosFragment">
+
+
+    <TextView
+        android:id="@+id/fgPperfi"
+        android:layout_width="375dp"
+        android:layout_height="537dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="
+    \n¿Cómo se determinan los precios de los productos?
+    \n\nLos precios de los productos se determinan en función de varios factores, como la oferta y la demanda, los costos de producción y la competencia en tu área.
+
+    \n\n¿Puedo ver los precios de los productos antes de hacer un pedido?
+    \n\nSí, puedes ver los precios de los productos en la aplicación antes de confirmar tu pedido. Los precios se muestran junto a cada artículo en el menú.
+
+    \n\n¿Existen cargos adicionales en mi pedido?
+    \n\nLos cargos adicionales, como los impuestos y las tarifas de entrega, se muestran claramente en la aplicación antes de confirmar tu pedido. No hay sorpresas ocultas.
+
+    \n\n¿Cómo puedo aplicar un código de descuento a mi pedido?
+    \n\nSi tienes un código de descuento, puedes aplicarlo en la sección de pago al realizar tu pedido. El descuento se reflejará en el precio total.
+
+    \n\n¿Los precios varían según la ubicación?
+    \n\nSí, los precios de los productos pueden variar según tu ubicación y la disponibilidad de los restaurantes asociados.
+
+    \n\n¿Cómo puedo ver los detalles de los precios en mi recibo?
+    \n\nDespués de realizar un pedido, puedes ver el desglose detallado de los precios en el recibo de tu pedido en la aplicación."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <ScrollView
+        android:layout_width="377dp"
+        android:layout_height="545dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="17dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <TextView
         android:id="@+id/textView15"
@@ -18,16 +62,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="350dp"
-        android:layout_height="565dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

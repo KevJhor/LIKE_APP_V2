@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    tools:context=".ui.fragmen.List_Rest_Fragment">
+    tools:context=".ui.fragments.List_Rest_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragmen.PregFrecFragment">
+    tools:context=".ui.fragments.PregFrecFragment">
 
     <!-- Layout principal -->
     <LinearLayout
@@ -36,46 +36,52 @@
 
             <!-- Botón 1 -->
             <Button
+                android:id="@+id/btnPpedi"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/butAcerPed"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <!-- Botón 2 -->
             <Button
+                android:id="@+id/btnPpag"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/butAcerPagos"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <!-- Botón 3 -->
             <Button
+                android:id="@+id/btnPperf"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/butAcerPerf"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <!-- Botón 4 -->
             <Button
+                android:id="@+id/btnPentre"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/butAcerEntr"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <!-- Botón 5 -->
             <Button
+                android:id="@+id/btnPpreci"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/butAcerPrecios"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <!-- Botón "Contactar a un asesor" -->
             <Button
+                android:id="@+id/btnContAs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
