@@ -139,5 +139,6 @@ Crea o modifica las categorias menus
     <string name="valetEmail">Correo</string>
     <string name="valetPassword">Password</string>
     <string name="title_activity_restaurante">RestauranteActivity</string>
+    <string name="nombrePlato">Ingresa nombre del plato</string>
 
 </resources>
