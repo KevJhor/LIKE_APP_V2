@@ -1,59 +1,166 @@
 package com.example.like_app.ui.users
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class RegisterActivity : AppCompatActivity() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [fragmet_client_register.newInstance] factory method to
- * create an instance of this fragment.
- */
-class fragmet_client_register : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    // Declaración de las vistas
+    private lateinit var editTextFirstName: EditText
+    private lateinit var editTextLastName: EditText
+    private lateinit var editTextEmail: EditText
+    private lateinit var editTextPhone: EditText
+    private lateinit var editTextPassword: EditText
+    private lateinit var editTextConfirmPassword: EditText
+    private lateinit var editTextAddress: EditText
+    private lateinit var buttonRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        setContentView(R.layout.activity_register)
+
+        // Inicialización de las vistas
+        editTextFirstName = findViewById(R.id.etClientName)
+        editTextLastName = findViewById(R.id.etClientSurname)
+        editTextEmail = findViewById(R.id.etClientEmail)
+        editTextPhone = findViewById(R.id.etClientPhone)
+        editTextPassword = findViewById(R.id.etClientPassword)
+        editTextConfirmPassword = findViewById(R.id.etConfirmPassword)
+        editTextAddress = findViewById(R.id.etAddress)
+        buttonRegister = findViewById(R.id.btnClientRegister)
+
+        // Establecer listener para el botón de registro
+        buttonRegister.setOnClickListener {
+            registerUser()
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmet_client_register, container, false)
-    }
+    private fun registerUser() {
+        // Obtener los valores ingresados por el usuario
+        val firstName = editTextFirstName.text.toString().trim()
+        val lastName = editTextLastName.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
+        val phone = editTextPhone.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
+        val confirmPassword = editTextConfirmPassword.text.toString().trim()
+        val address = editTextAddress.text.toString().trim()
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment fragmet_client_register.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            fragmet_client_register().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        // Validar los campos
+        if (firstName.isEmpty()) {
+            editTextFirstName.error = "El nombre es obligatorio"
+            return
+        }
+        if (!firstName.matches(Regex("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$"))) {
+            editTextFirstName.error = "El nombre solo debe contener letras"
+            return
+        }
+
+        if (lastName.isEmpty()) {
+            editTextLastName.error = "El apellido es obligatorio"
+            return
+        }
+        if (!lastName.matches(Regex("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$"))) {
+            editTextLastName.error = "El apellido solo debe contener letras"
+            return
+        }
+
+        if (email.isEmpty()) {
+            editTextEmail.error = "El correo electrónico es obligatorio"
+            return
+        }
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.error = "Introduce un correo electrónico válido"
+            return
+        }
+
+        if (phone.isEmpty()) {
+            editTextPhone.error = "El teléfono es obligatorio"
+            return
+        }
+        if (!phone.matches(Regex("\\d+"))) {
+            editTextPhone.error = "El teléfono solo debe contener números"
+            return
+        }
+
+        if (password.isEmpty()) {
+            editTextPassword.error = "La contraseña es obligatoria"
+            return
+        }
+        if (password.length < 6) {
+            editTextPassword.error = "La contraseña debe tener al menos 6 caracteres"
+            return
+        }
+
+        if (confirmPassword.isEmpty()) {
+            editTextConfirmPassword.error = "Confirma tu contraseña"
+            return
+        }
+        if (password != confirmPassword) {
+            editTextConfirmPassword.error = "Las contraseñas no coinciden"
+            return
+        }
+
+        if (address.isEmpty()) {
+            editTextAddress.error = "La dirección es obligatoria"
+            return
+        }
+
+        // Aquí puedes agregar la lógica para registrar al usuario
+        val auth = FirebaseAuth.getInstance()
+
+        // Registrar al usuario con correo electrónico y contraseña en Firebase Authentication
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Usuario registrado con éxito en Firebase Authentication
+                    val userId = auth.currentUser?.uid
+
+                    // Guardar información adicional en Cloud Firestore
+                    val db = FirebaseFirestore.getInstance()
+                    val userMap = hashMapOf(
+                        "firstName" to firstName,
+                        "lastName" to lastName,
+                        "email" to email,
+                        "phone" to phone,
+                        "address" to address
+                    )
+
+                    userId?.let {
+                        db.collection("users").document(it).set(userMap)
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    this,
+                                    "Usuario registrado con éxito",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                // Navegar a MainActivity o a otra actividad después del registro exitoso
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
+                                finish() // Finaliza esta actividad
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(
+                                    this,
+                                    "Error al guardar información del usuario: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                    }
+                } else {
+                    // Error al registrar al usuario
+                    Toast.makeText(
+                        this,
+                        "Error al registrar al usuario: ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
