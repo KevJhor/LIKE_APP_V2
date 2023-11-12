@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         // Inicialización de las vistas
-        /*editTextFirstName = findViewById(R.id.editTextFirstName)
+        editTextFirstName = findViewById(R.id.editTextFirstName)
         editTextLastName = findViewById(R.id.editTextLastName)
         editTextEmail = findViewById(R.id.editTextEmail)
         editTextPhone = findViewById(R.id.editTextPhone)
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         // Establecer listener para el botón de registro
         buttonRegister.setOnClickListener {
             registerUser()
-        }*/
+        }
     }
 
     private fun registerUser() {

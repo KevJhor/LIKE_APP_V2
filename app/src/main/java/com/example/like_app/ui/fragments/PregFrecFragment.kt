@@ -1,4 +1,4 @@
-package com.example.like_app.ui.fragmen
+package com.example.like_app.ui.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
