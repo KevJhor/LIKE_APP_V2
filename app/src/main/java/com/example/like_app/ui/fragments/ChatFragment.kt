@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.Message
-import com.example.like_app.ui.adapter.MessageAdapter
+import com.example.like_app.adapter.MessageAdapter
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
