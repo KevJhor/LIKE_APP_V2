@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -9,31 +8,11 @@
             android:id="@+id/homeFragment"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/listaRestaurantes"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/vallistRest" />
-        <item
-            android:id="@+id/list_Rest_Fragment"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/vallistRestFrag" />
-        <item
-            android:id="@+id/listaTiendas"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/vallistTienda" />
 
         <item
             android:id="@+id/notificaciones"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/notificaciones" />
-        <item
-            android:id="@+id/pregFrecFragment"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/valpregFrec"/>
-        <item
-            android:id="@+id/atenClientFragment"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/valatenClient"/>
         <item
             android:id="@+id/gestionRestaurante"
             android:icon="@drawable/ic_menu_slideshow"

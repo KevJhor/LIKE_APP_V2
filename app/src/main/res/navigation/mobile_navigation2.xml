@@ -10,16 +10,20 @@
         android:name="com.example.like_app.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.like_app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/chkdepoFragment2"
+        android:name="com.example.like_app.ui.payonline.ChkdepoFragment"
+        android:label="fragment_chkdepo"
+        tools:layout="@layout/fragment_chkdepo" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.like_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/notificaciones2"
+        android:name="com.example.like_app.ui.servicios.Notificaciones"
+        android:label="fragment_notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
+    <fragment
+        android:id="@+id/gestionRestaurante2"
+        android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
+        android:label="fragment_gestion_restaurantes"
+        tools:layout="@layout/fragment_gestion_restaurantes" />
+
 </navigation>

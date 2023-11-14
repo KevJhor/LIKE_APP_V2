@@ -1,4 +1,4 @@
-package com.example.like_app.ui.model
+package com.example.like_app.model
 
 data class model_estab(val id: Int,
                        val image: Int,

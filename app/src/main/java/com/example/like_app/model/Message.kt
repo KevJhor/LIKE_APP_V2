@@ -1,10 +1,22 @@
 package com.example.like_app.model
 
+import com.google.firebase.Timestamp
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.util.UUID
+
 data class Message(
-    val messageId: String, // Un identificador único para el mensaje
-    val senderId: String,  // El ID del remitente
-    val text: String,      // El contenido del mensaje
-    val timestamp: Long    // Una marca de tiempo para el mensaje
+    val mensaje: String,
+    val nombre: String,
+    var urlFoto: String = "",
+    val fotoPerfil: String,
+    val type_mensaje: String,
+    val hora: Timestamp = Timestamp.now(),  // Campo de marca de tiempo,
+    var horaFormateada: String = "",
+    val id: String = UUID.randomUUID().toString()  // Campo de id
+
+
+
 ){
-    constructor(text: String) : this("", "", text, 0)
+
 }
