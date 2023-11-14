@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
-import com.example.like_app.ui.adapter.estab_adapter
-import com.example.like_app.ui.model.model_estab
+import com.example.like_app.adapter.estab_adapter
+import com.example.like_app.model.model_estab
 
 /**
  * A simple [Fragment] subclass.

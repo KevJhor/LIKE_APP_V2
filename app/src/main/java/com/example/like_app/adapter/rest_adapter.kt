@@ -1,4 +1,4 @@
-package com.example.like_app.ui.adapter
+package com.example.like_app.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
-import com.example.like_app.ui.model.model_estab
-import com.example.like_app.ui.model.model_rest
+import com.example.like_app.model.model_estab
+import com.example.like_app.model.model_rest
 
 class rest_adapter(private val lstEstab: List<model_rest>) : RecyclerView.Adapter<rest_adapter.ViewHolder>() {
 

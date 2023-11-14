@@ -1,4 +1,4 @@
-package com.example.like_app.ui.adapter
+package com.example.like_app.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +21,7 @@ class MessageAdapter(private val messages: List<Message>) : RecyclerView.Adapter
         val nombre :TextView = itemView.findViewById(R.id.nombreMensaje)
         val mensaje :TextView = itemView.findViewById(R.id.mensajeMensaje)
         val hora : (TextView) = itemView.findViewById(R.id.horaMensaje)
-        val fotoMensajePerfil : (CircleImageView) = itemView.findViewById(R.id.fotoPerfilMensaje);
+        val fotoMensajePerfil : (CircleImageView) = itemView.findViewById(R.id.fotoPerfilMensaje)
         val fotoMensaje : (ImageView) = itemView.findViewById(R.id.mensajeFoto)
     }
 

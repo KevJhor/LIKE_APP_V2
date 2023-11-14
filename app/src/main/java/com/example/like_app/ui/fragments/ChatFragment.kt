@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.Message
 import com.example.like_app.model.MessagesDiffCallback
-import com.example.like_app.ui.adapter.MessageAdapter
+import com.example.like_app.adapter.MessageAdapter
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.Timestamp
@@ -217,6 +217,7 @@ class ChatFragment : Fragment() {
                 }
             }
         }
+
         /*else if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK) {
            val uri: Uri? = data?.data
            storageReference = storage.getReference("foto_perfil")
