@@ -31,9 +31,14 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,priv
 
         }
 
+
     }
 
 
+    fun actualizarLista(nuevaLista: List<RestauranteModel>) {
+        lstRestaurantes = nuevaLista
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflateView:View=LayoutInflater.from(parent.context).inflate(R.layout.item_restaurante, parent, false)
         return ViewHolder(inflateView)
