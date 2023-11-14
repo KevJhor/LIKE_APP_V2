@@ -15,12 +15,17 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.Message
+import com.example.like_app.model.MessagesDiffCallback
 import com.example.like_app.ui.adapter.MessageAdapter
+import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -29,6 +34,7 @@ import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
 import java.text.SimpleDateFormat
 import java.util.Locale
+import java.util.UUID
 
 
 class ChatFragment : Fragment() {
@@ -64,7 +70,7 @@ class ChatFragment : Fragment() {
         rvMensajes = view.findViewById(R.id.recyclerViewChat)
         val txtMensaje : EditText = view.findViewById(R.id.txtMensaje);
         val btnEnviarFoto :ImageButton = view.findViewById(R.id.btnEnviarFoto);
-        val fotoPerfilCadena = "";
+        //val fotoPerfilCadena = "";
         val buttonSend: Button = view.findViewById(R.id.btnEnviar)
 
         // Inicializar RecyclerView y adaptador
@@ -81,16 +87,35 @@ class ChatFragment : Fragment() {
             intent.type = "image/jpeg"
             intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true)
             startActivityForResult(Intent.createChooser(intent, "Selecciona una foto"), PHOTO_SEND)
+
         }
 
         buttonSend.setOnClickListener{
             val messageText = txtMensaje.text.toString().trim()
             if (messageText.isNotEmpty()) {
-                sendMessage(messageText)
+                val newMessage = Message(
+                    mensaje = messageText,
+                    nombre = "NombreEjemplo",  // Puedes cambiar esto según tus necesidades
+                    fotoPerfil = "URLFotoPerfilEjemplo",  // Puedes cambiar esto según tus necesidades
+                    type_mensaje = "1",
+                    hora = Timestamp.now()
+                )
 
-                // Limpiar el campo de texto después de enviar el mensaje
-                txtMensaje.text.clear()
+                messageCollection
+                    .add(newMessage)
+                    .addOnSuccessListener { documentReference ->
+                        // El mensaje se envió con éxito, puedes realizar acciones adicionales aquí si es necesario.
 
+                        // Agregar el nuevo mensaje a la lista local y notificar al adaptador
+
+                        messageAdapter.notifyDataSetChanged()
+                        setScrollbar()
+                        txtMensaje.setText("")
+                    }
+                    .addOnFailureListener { e ->
+                        // Manejar errores al enviar el mensaje.
+                        Log.e("ChatFragment", "Error al enviar el mensaje a Firebase", e)
+                    }
             }
         }
 
@@ -104,64 +129,94 @@ class ChatFragment : Fragment() {
             }
         })
 
-
-
-
-
-
         return view
     }
 
 
 
+
     private fun sendMessage(messageText: String) {
-        val newMessage = Message(
-            mensaje = messageText,
-            nombre = "NombreEjemplo",  // Puedes cambiar esto según tus necesidades
-            fotoPerfil = "URLFotoPerfilEjemplo",  // Puedes cambiar esto según tus necesidades
-            type_mensaje = "tipoEjemplo",
-            hora = Timestamp.now()
-        )
+        val photoUri = Uri.parse(messageText)
+        storageReference = storage.getReference("imagenes_chat")
+        val fotoReferencia: StorageReference? = photoUri?.let { storageReference?.child(it.lastPathSegment!!) }
+        fotoReferencia?.putFile(photoUri)?.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                // La foto se subió correctamente
+                val downloadUrlTask = task.result?.storage?.downloadUrl
 
-        messageCollection
-            .add(newMessage)
-            .addOnSuccessListener { documentReference ->
-                // El mensaje se envió con éxito, puedes realizar acciones adicionales aquí si es necesario.
+                downloadUrlTask?.addOnSuccessListener { downloadUrl ->
+                    // Enviar el mensaje
+                    val newMessage = Message(
+                        mensaje = messageText,
+                        nombre = "NombreEjemplo",  // Puedes cambiar esto según tus necesidades
+                        fotoPerfil = "URLFotoPerfilEjemplo",  // Puedes cambiar esto según tus necesidades
+                        type_mensaje = "2",
+                        hora = Timestamp.now(),
+                        urlFoto = downloadUrl.toString()
+                    )
 
-                // Agregar el nuevo mensaje a la lista local y notificar al adaptador
+                    messageCollection
+                        .add(newMessage)
+                        .addOnSuccessListener { documentReference ->
+                            // El mensaje se envió con éxito, puedes realizar acciones adicionales aquí si es necesario.
 
-                messageAdapter.notifyDataSetChanged()
-                setScrollbar()
+                            // Agregar el nuevo mensaje a la lista local y notificar al adaptador
+                            messageAdapter.notifyDataSetChanged()
+                            setScrollbar()
+                        }
+                        .addOnFailureListener { e ->
+                            // Manejar errores al enviar el mensaje.
+                            Log.e("ChatFragment", "Error al enviar el mensaje a Firebase", e)
+                        }
+                }?.addOnFailureListener { e ->
+                    // Manejar errores al obtener la URL de descarga.
+                    Log.e("ChatFragment", "Error al obtener la URL de descarga", e)
+                }
+            } else {
+                // Ocurrió un error al subir la foto
+                Log.e("ChatFragment", "Error al subir la foto", task.exception)
             }
-            .addOnFailureListener { e ->
-                // Manejar errores al enviar el mensaje.
-                Log.e("ChatFragment", "Error al enviar el mensaje a Firebase", e)
-            }
+        }
     }
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PHOTO_SEND && resultCode == RESULT_OK) {
             val uri: Uri? = data?.data
-            storageReference = storage.getReference("imagenes_chat")
-            val fotoReferencia: StorageReference? = uri?.let { storageReference?.child(it.lastPathSegment!!) }
-            fotoReferencia?.putFile(uri)?.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    // Utiliza task.result.storage.downloadUrl para obtener la URL de descarga
-                    task.result?.storage?.downloadUrl?.addOnSuccessListener { downloadUrl ->
-                        val m = Message("Kevin te ha enviado una foto", "NombreEjemplo", downloadUrl.toString(), "URLFotoPerfilEjemplo", "2", Timestamp.now())
-                        messageCollection.add(m)
-                        setScrollbar()
-                    }?.addOnFailureListener { e ->
-                        Log.e("ChatFragment", "Error al obtener la URL de descarga", e)
+            if (uri != null) {
+                storageReference = storage.getReference("imagenes_chat")
+                val photoId = UUID.randomUUID().toString()
+                val fotoReferencia: StorageReference? =
+                    uri?.let { storageReference?.child(photoId) }
+                fotoReferencia?.putFile(uri)?.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        // Utiliza task.result.storage.downloadUrl para obtener la URL de descarga
+                        task.result?.storage?.downloadUrl?.addOnSuccessListener { downloadUrl ->
+                            //Toast.makeText(requireContext(), "URL de descarga: $downloadUrl.toString()", Toast.LENGTH_SHORT).show()
+
+                            val m = Message(
+                                "Kevin te ha enviado una foto",
+                                "NombreEjemplo",
+                                downloadUrl.toString(),
+                                "URLFotoPerfilEjemplo",
+                                "2",
+                                Timestamp.now()
+                            )
+                            messageCollection.add(m)
+
+                            setScrollbar()
+                        }?.addOnFailureListener { e ->
+                            Log.e("ChatFragment", "Error al obtener la URL de descarga", e)
+                        }
+                    } else {
+                        Log.e("ChatFragment", "Error al subir la foto", task.exception)
                     }
-                } else {
-                    Log.e("ChatFragment", "Error al subir la foto", task.exception)
                 }
             }
         }
-
         /*else if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK) {
            val uri: Uri? = data?.data
            storageReference = storage.getReference("foto_perfil")
@@ -178,7 +233,7 @@ class ChatFragment : Fragment() {
 
 
     private fun setScrollbar() {
-        rvMensajes?.scrollToPosition(messageAdapter.itemCount - 1)
+        rvMensajes?.smoothScrollToPosition(messageAdapter.itemCount - 1)
     }
 
 
@@ -186,6 +241,9 @@ class ChatFragment : Fragment() {
 
 
     private fun loadMessages() {
+
+        val messageCollection = FirebaseFirestore.getInstance().collection("messages")
+        val oldMessages = messages.toList()  // Guardar una copia de los mensajes actuales
         messageCollection
             .orderBy("hora", Query.Direction.ASCENDING)
             .addSnapshotListener { snapshots, e ->
@@ -195,27 +253,43 @@ class ChatFragment : Fragment() {
                 }
 
                 messages.clear()
+                val downloadUrlTasks = mutableListOf<Task<Uri>>()  // Para almacenar tareas de descarga de imágenes
+
                 for (doc in snapshots!!) {
                     val mensaje = doc.getString("mensaje")
                     val nombre = doc.getString("nombre")
                     val fotoPerfil = doc.getString("fotoPerfil")
                     val typeMensaje = doc.getString("type_mensaje")
                     val timestamp = doc.getTimestamp("hora")
+                    val foto = doc.getString("urlFoto") ?: ""
 
                     if (mensaje != null && nombre != null && fotoPerfil != null && typeMensaje != null && timestamp != null) {
                         val formattedTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(timestamp.toDate())
-                        val message = Message(mensaje, nombre,"", fotoPerfil, typeMensaje, timestamp)
+                        val message = Message(mensaje, nombre,foto, fotoPerfil, typeMensaje, timestamp)
                         message.horaFormateada = formattedTime
+
+                        // Cargar la imagen del almacenamiento de Firebase
+                        val storageReference = storage.getReference("imagenes_chat/$fotoPerfil")
+                        storageReference.getDownloadUrl().addOnSuccessListener { downloadUrl ->
+                            message.urlFoto = downloadUrl.toString()
+                            setScrollbar()
+
+                        }.addOnFailureListener { e ->
+                            Log.e("ChatFragment", "Error al cargar la imagen del almacenamiento de Firebase", e)
+                        }
+
                         messages.add(message)
                     }
-
                 }
-                // Notificar al adaptador después de esperar un breve periodo con Handler
-                Handler().postDelayed({
+
+                // Notificar al adaptador en el hilo principal
+                activity?.runOnUiThread {
                     messageAdapter.notifyDataSetChanged()
-                }, 500) // Espera 500 milisegundos antes de notificar al adaptador
+                    setScrollbar()
+                }
             }
     }
+
 
 
 }
