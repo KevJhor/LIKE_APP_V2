@@ -11,7 +11,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="Inicio">Inicio</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Tambo">Tambo</string>
     <string name="Cat_Minimarketing">Minimarketing</string>
@@ -65,7 +66,7 @@
     <string name="gestionlblordenes">Mis Ordenes</string>
     <string name="gestionlblnotificaciones">Notificaciones</string>
 
-    <string name="categorias_">Categorias menus</string>
+    <string name="categorias_">Registra tus categorias</string>
 
     <string name="lblItemMenu1">Menu 1</string>
     <string name="lblItemMenu2">Menu 2</string>
@@ -138,8 +139,10 @@ Crea o modifica las categorias menus
     <string name="valbtnDetalle">Ver Orden</string>
     <string name="valetEmail">Correo</string>
     <string name="valetPassword">Password</string>
-    <string name="title_activity_restaurante">RestauranteActivity</string>
     <string name="nombrePlato">Ingresa nombre del plato</string>
+    <string name="tvRegistroMenu">REGISTRA TUS PPLATOS</string>
+    <string name="btnModifCate">Modificar</string>
+    <string name="etImgMenu">Url DE LA IMAGEN</string>
+    <string name="title_activity_restaurante">RestauranteActivity</string>
     <string name="notificaciones">Notificaciones</string>
-
 </resources>
