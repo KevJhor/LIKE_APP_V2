@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
@@ -40,11 +42,18 @@ class RestFragment : Fragment() {
         val tvNombreRest:TextView=view.findViewById(R.id.tvNombreRest)
         val tvHorario:TextView=view.findViewById(R.id.tvScheduleRest)
         val tvDireccion:TextView=view.findViewById(R.id.tvAddressRest)
+        val btnOpinion: Button = view.findViewById(R.id.button9)
         //LISTAS PARA MIS RecyclerViews
         val listCategorias:ArrayList<MenuModel> = ArrayList()
         var lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
 
         val db= FirebaseFirestore.getInstance()
+
+        btnOpinion.setOnClickListener{
+            val navController = requireActivity().findNavController(R.id.nav_host_fragment_content_main) // Asegúrate de que el ID sea el correcto
+            navController.navigate(R.id.fgComentario)
+        }
+
 
         //LLENAR DATOS DE RESTAURANTE
         db.collection("datos_empresa")
