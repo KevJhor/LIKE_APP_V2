@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.ImageView
@@ -42,7 +43,9 @@ class GestionRestaurante : Fragment() {
         val tvDireccion:TextView=view.findViewById(R.id.tvDireccionRest)
 
         val btnMenus:Button=view.findViewById(R.id.btnMenus)
-
+        //LISTAS PARA MIS RecyclerViews
+        val listCategorias:ArrayList<MenuModel> = ArrayList()
+        var lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
         val db=FirebaseFirestore.getInstance()
         db.collection("datos_empresa")
             .whereEqualTo("brand_name",brand_name)
@@ -71,15 +74,63 @@ class GestionRestaurante : Fragment() {
             }
 
 
+        db.collection("menu").document(brand_name).addSnapshotListener { snap, e ->
+            if (e != null) {
+                Log.e("TAG", "Error al obtener el documento: $e")
+                return@addSnapshotListener
+            }
+            if (snap != null && snap.exists()) {
+                // Acceder a los datos del documento
+
+                //SE LIMPIAN LAS LISTAS
+                listCategorias.clear()
+                lstItemsMenu.clear()
+
+                val datos = snap.data
+                if (datos != null) {
+                    // Iterar sobre las secciones (Sandwiches, Hamburguesas, Almuerzos, etc.)
+                    for ((seccion,platosMap) in datos) {
+                        //SE LLENA CADA CATEGORIA QUE TENGO EN MI COLECICON
+                        listCategorias.add(MenuModel(1,seccion))
+                        // Iterar sobre los platos dentro de cada sección
+                        for ((platoNombre, platoData) in (platosMap as? Map<String, Any>
+                            ?: emptyMap())) {
+                            val platoModel = ItemMenu(
+                                imageUrl = (platoData as? Map<String, Any>
+                                    ?: emptyMap())["img_url"]?.toString() ?: "",
+                                title = platoNombre,
+                                price = (platoData as? Map<String, Any>
+                                    ?: emptyMap())["precio"]?.toString() ?: "",
+                                info = (platoData as? Map<String, Any>
+                                    ?: emptyMap())["descripcion"]?.toString() ?: "")
+                            lstItemsMenu.add(platoModel)
+                        }
+
+                    }
+                    //SE LLENA LA BARRAR HORIZONTAL DE CATEGORIAS
+                    val rvbtnmenus:RecyclerView=view.findViewById(R.id.rvBtnMenus)
+                    rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listCategorias)
+
+                    //SE LLENA EL RECYCLER VIEW DE MENUS
+                    val rvItems:RecyclerView=view.findViewById(R.id.rvItems)
+                    rvItems.layoutManager=LinearLayoutManager(requireContext())
+                    rvItems.adapter=ItemMenuAdapter(lstItemsMenu)
 
 
-        val rvItems:RecyclerView=view.findViewById(R.id.rvItems)
-        rvItems.layoutManager=LinearLayoutManager(requireContext())
-        rvItems.adapter=ItemMenuAdapter(listItems())
 
-        val rvbtnmenus:RecyclerView=view.findViewById(R.id.rvBtnMenus)
-        rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listMenus())
+
+                    Log.i("msg_rest", "Datos del documento en tiempo real: $datos")
+                } else {
+                    Log.i("msg_rest", "El documento no existe o está vacío.")
+                }
+
+            }
+
+        }
+
+
+
 
         btnMenus.setOnClickListener{
 
@@ -89,25 +140,7 @@ class GestionRestaurante : Fragment() {
 
         return view
     }
-    private fun listItems():List<ItemMenu>{
-        val listItems:ArrayList<ItemMenu> = ArrayList()
-        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Combo especial","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
-            "S/. 35","30-40 min"))
 
-        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 1","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
-            "S/. 20","15-20 min"))
-
-        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 2","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
-            "S/. 15","40-50 min"))
-
-        listItems.add(ItemMenu(R.drawable.kfc,"Titulo 3","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
-            "S/. 40","20-40 min"))
-        listItems.add(ItemMenu(R.drawable.imgmenuejemplo,"Titulo 4","Pizza mediana de especialidad, acompañamiento y bebida 250 ml ....",
-            "S/. 10","25-30 min"))
-
-
-        return listItems
-    }
 
     private fun listMenus():List<MenuModel>{
         val listItems:ArrayList<MenuModel> = ArrayList()
@@ -118,10 +151,6 @@ class GestionRestaurante : Fragment() {
         listItems.add(MenuModel(5,"Menu 5"))
         listItems.add(MenuModel(6,"Menu 6"))
         listItems.add(MenuModel(7,"Menu 7"))
-
-
-
-
         return listItems
     }
 

@@ -14,7 +14,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/etDescripPlato"
         android:layout_width="252dp"
         android:layout_height="35dp"
         android:ems="10"
@@ -98,7 +98,7 @@
         tools:layout_editor_absoluteY="444dp" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/etCategoria"
         android:layout_width="252dp"
         android:layout_height="35dp"
         android:ems="10"
