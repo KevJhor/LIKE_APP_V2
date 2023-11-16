@@ -30,13 +30,14 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         // Configure Google Sign In
+/*
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
+*/
         // Existing code for email/password login
         val etUser: EditText = findViewById(R.id.etUser)
         val etPassword: EditText = findViewById(R.id.etPassword)
