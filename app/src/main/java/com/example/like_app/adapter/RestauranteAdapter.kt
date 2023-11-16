@@ -17,7 +17,6 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,priv
         val ivItemRest: ImageView = itemView.findViewById(R.id.ivItemRest)
         val tvNombreRest: TextView = itemView.findViewById(R.id.tvNomRest)
         val tvTiempoRest: TextView = itemView.findViewById(R.id.tvTiempoRest)
-        val tvPrecioEnvio: TextView = itemView.findViewById(R.id.tvPrecioEnvioRest)
 
         init {
             itemView.setOnClickListener(this)
@@ -47,8 +46,7 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,priv
         val itemRest= lstRestaurantes[position]
         Picasso.get().load(itemRest.imageUrl).into(holder.ivItemRest)
         holder.tvNombreRest.text=itemRest.nombre
-        holder.tvTiempoRest.text=itemRest.tiempo
-        holder.tvPrecioEnvio.text=itemRest.precioEnvio
+        holder.tvTiempoRest.text=itemRest.horario
     }
 
     interface RecyclerViewEvent {

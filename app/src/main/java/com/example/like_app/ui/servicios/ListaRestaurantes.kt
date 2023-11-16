@@ -34,6 +34,7 @@ class ListaRestaurantes : Fragment() , RestauranteAdapter.RecyclerViewEvent {
         //CONEXION A FIRE BASE
         val db = FirebaseFirestore.getInstance()
         val rvRest: RecyclerView = view.findViewById(R.id.rc_rest)
+
         db.collection("Restaurante")
             .addSnapshotListener { snap, e ->
                 if (e != null) {
@@ -43,9 +44,8 @@ class ListaRestaurantes : Fragment() , RestauranteAdapter.RecyclerViewEvent {
                 //LLENO lstREST
                 lstRest = snap!!.documents.map { document ->
                     RestauranteModel(
-                        document["nombre"].toString(),
-                        document["tiempo"].toString(),
-                        document["precio_envio"].toString(),
+                        document["brand_name"].toString(),
+                        document["schedule"].toString(),
                         document["imageUrl"].toString()
 
                     )
@@ -74,7 +74,7 @@ class ListaRestaurantes : Fragment() , RestauranteAdapter.RecyclerViewEvent {
             Toast.LENGTH_SHORT
         ).show()
         val bundle = Bundle()
-        bundle.putString("clave", "TITULO RESTAURANTE")
+        bundle.putString("clave", rest.nombre)
         findNavController().navigate(R.id.action_listaRestaurantes_to_restFragment, bundle)
 
     }
