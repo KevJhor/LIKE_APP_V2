@@ -142,5 +142,6 @@ Crea o modifica las categorias menus
     <string name="nombrePlato">Ingresa nombre del plato</string>
     <string name="notificaciones">Notificaciones</string>
     <string name="default_web_client_id" />
+    <string name="LoginActivity">LoginActivity</string>
 
 </resources>
