@@ -47,6 +47,7 @@ class GestionRestaurante : Fragment() {
         val listCategorias:ArrayList<MenuModel> = ArrayList()
         var lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
         val db=FirebaseFirestore.getInstance()
+
         db.collection("datos_empresa")
             .whereEqualTo("brand_name",brand_name)
             .get().addOnSuccessListener {snap->
@@ -60,17 +61,17 @@ class GestionRestaurante : Fragment() {
                         document["portada"].toString()
                         )
                     //Log.i("TAG", "url imagen ${datosRest.img_logo_url}")
+                    //tvNombre.text=datosRest.brand_name
                     llenaDatos(datosRest,ivLogo,ivPortada,tvNombre,tvHorario,tvDireccion)
 
 
-
-                    //Log.i("TAG", "Documento encontrado con éxito: $document")
+                    Log.i("GESTION_REST", "Documento encontrado con éxito: $document")
 
                 }
 
             }.addOnFailureListener { exception ->
                 // Manejar errores
-               // Log.i("TAG", "Error al buscar el documento", exception)
+               Log.i("GESTION_REST", "Error al buscar el documento", exception)
             }
 
 

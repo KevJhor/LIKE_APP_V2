@@ -143,5 +143,6 @@ Crea o modifica las categorias menus
     <string name="tvRegistroMenu">REGISTRA TUS PPLATOS</string>
     <string name="btnModifCate">Modificar</string>
     <string name="etImgMenu">Url DE LA IMAGEN</string>
-
+    <string name="title_activity_restaurante">RestauranteActivity</string>
+    <string name="notificaciones">Notificaciones</string>
 </resources>
