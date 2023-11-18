@@ -5,7 +5,6 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -13,19 +12,14 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.Message
-import com.example.like_app.model.MessagesDiffCallback
 import com.example.like_app.adapter.MessageAdapter
 import com.google.android.gms.tasks.Task
-import com.google.android.gms.tasks.Tasks
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -68,7 +62,7 @@ class ChatFragment : Fragment() {
 
         val nombre: TextView = view.findViewById(R.id.nombre);
         rvMensajes = view.findViewById(R.id.recyclerViewChat)
-        val txtMensaje : EditText = view.findViewById(R.id.txtMensaje);
+        val txtMensaje : EditText = view.findViewById(R.id.txtMensage);
         val btnEnviarFoto :ImageButton = view.findViewById(R.id.btnEnviarFoto);
         //val fotoPerfilCadena = "";
         val buttonSend: Button = view.findViewById(R.id.btnEnviar)

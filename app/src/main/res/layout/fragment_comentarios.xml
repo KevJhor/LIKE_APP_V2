@@ -77,14 +77,14 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/txtMensaje"
+                android:id="@+id/txtMensag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Escribe un mensaje"
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/btnEnviar"
+                android:id="@+id/btnEnvi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Enviar"/>
