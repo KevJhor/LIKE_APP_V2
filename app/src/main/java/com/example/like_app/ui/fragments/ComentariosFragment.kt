@@ -1,6 +1,7 @@
 package com.example.like_app.ui.fragments
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
@@ -16,6 +18,8 @@ import com.example.like_app.adapter.ComentariosAdapter
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 
@@ -24,6 +28,7 @@ class ComentariosFragment : Fragment() {
     private lateinit var comentariosAdapter: ComentariosAdapter
     private lateinit var firestoreDB: FirebaseFirestore
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +40,11 @@ class ComentariosFragment : Fragment() {
         firestoreDB = FirebaseFirestore.getInstance()
         var comentario: EditText = view.findViewById(R.id.txtMensag)
         val btnEnviar: Button = view.findViewById(R.id.btnEnvi)
+
         val califi: RatingBar = view.findViewById(R.id.ratingBar2)
+
+
+
         btnEnviar.setOnClickListener {
             EnviarComentario(comentario.text.toString(),califi)
             comentario.setText("")
@@ -43,12 +52,14 @@ class ComentariosFragment : Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun EnviarComentario(txt: String, estrella: RatingBar){
-        //val formattedTime = SimpleDateFormat("hh:mm a", Locale.getDefault()).format(Timestamp.now())
+        val hora = LocalDateTime.now()
+        val hora_24 = hora.format(DateTimeFormatter.ofPattern("HH:mm a"))
         val comentario = hashMapOf(
-            "nombre" to "Daniel Stuart",
-            "hora" to "12:51",
-            "calificacion" to 3.0,
+            "nombre" to "Lazaro Fuller",
+            "hora" to hora_24.toString(),
+            "calificacion" to estrella.rating,
             "mensaje" to txt
         )
 
