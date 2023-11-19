@@ -11,7 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="Inicio">Inicio</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Tambo">Tambo</string>
     <string name="Cat_Minimarketing">Minimarketing</string>
@@ -141,7 +141,7 @@ Crea o modifica las categorias menus
     <string name="title_activity_restaurante">RestauranteActivity</string>
     <string name="nombrePlato">Ingresa nombre del plato</string>
     <string name="notificaciones">Notificaciones</string>
-    <string name="default_web_client_id" />
+    <string name="default_web_client_id">AIzaSyB2FlHUE2IvWFhJL4Bo8eeJTqWXy-UtmaY</string>
     <string name="LoginActivity">LoginActivity</string>
 
 </resources>
