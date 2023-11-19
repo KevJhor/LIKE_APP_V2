@@ -103,6 +103,11 @@
         android:name="com.example.like_app.ui.fragments.ChatFragment"
         android:label="Chat en linea"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/fgComentario"
+        android:name="com.example.like_app.ui.fragments.ComentariosFragment"
+        android:label="Opiniones"
+        tools:layout="@layout/fragment_comentarios" />
 
 
 
