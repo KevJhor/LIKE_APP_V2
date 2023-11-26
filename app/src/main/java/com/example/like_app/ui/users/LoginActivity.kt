@@ -61,11 +61,21 @@ class LoginActivity : AppCompatActivity() {
         btnRegisterEmail.setOnClickListener {
             registerWithGmail()
         }
-
+private fun showRegisterOptions() {
+        val options = arrayOf("Registrar como Cliente", "Registrar como Negocio")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Elige una opción")
+            .setItems(options) { dialog, which ->
+                when (which) {
+                    0 -> startActivity(Intent(this, RegisterClientActivity::class.java))
+                    1 -> startActivity(Intent(this, RegisterActivity::class.java))
+                }
+            }
+        builder.show()
+    }
+    }
         // Other UI elements and listeners
-        val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
-        val btnRegisterNegocio = findViewById<Button>(R.id.btnRegisterNegocio)
-        val tvRegisterPrompt = findViewById<TextView>(R.id.tvRegisterPrompt)
+         val tvRegisterPrompt = findViewById<TextView>(R.id.tvRegisterPrompt)
 
         btnRegisterForm.setOnClickListener {
             navigateToRegisterForm()
@@ -79,7 +89,25 @@ class LoginActivity : AppCompatActivity() {
             handleRegisterClick()
         }
     }
+private fun showRegisterOptions() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_register_options, null)
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
 
+        dialogView.findViewById<Button>(R.id.btnCliente).setOnClickListener {
+            startActivity(Intent(this, RegisterClientActivity::class.java))
+            dialog.dismiss()
+        }
+
+        dialogView.findViewById<Button>(R.id.btnNegocio).setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+}
     private fun registerWithGmail() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
