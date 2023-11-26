@@ -25,7 +25,7 @@ class RegisterClientActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_fragmet_client_register)
+        setContentView(R.layout.activity_client_register)
 
         // Inicialización de las vistas
         editTextFirstName = findViewById(R.id.etClientName)

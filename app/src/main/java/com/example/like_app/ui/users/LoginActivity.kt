@@ -24,20 +24,18 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_activity)
+        setContentView(R.layout.activity_login)
 
         // Firebase Auth instance
         auth = FirebaseAuth.getInstance()
 
         // Configure Google Sign In
-/*
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-*/
         // Existing code for email/password login
         val etUser: EditText = findViewById(R.id.etUser)
         val etPassword: EditText = findViewById(R.id.etPassword)
@@ -87,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -118,12 +117,13 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateToRegisterForm() {
         // Navegar a la pantalla de registro
         Toast.makeText(this, "Navegando al formulario de registro", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
+        val intentclient = Intent(this, RegisterClientActivity::class.java)
+        startActivity(intentclient)
     }
 
     private fun navigateToBusinessRegistration() {
-        // Navegar a la pantalla de registro de negocio
+        val intentrest = Intent(this, RegisterRestActivity::class.java)
+        startActivity(intentrest)
         Toast.makeText(this, "Navegando al registro de negocio", Toast.LENGTH_SHORT).show()
     }
 

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    cardview:cardCornerRadius="10sp">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp">
+
+      <de.hdodenhof.circleimageview.CircleImageView
+          android:id="@+id/fotoPerfilMensaje"
+          android:layout_width="24sp"
+          android:layout_height="24sp"
+          android:src="@mipmap/ic_launcher"
+          tools:ignore="MissingClass" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/nombreMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kevin" />
+
+        <TextView
+            android:id="@+id/horaMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00" />
+      </LinearLayout>
+
+      <RatingBar
+          android:id="@+id/ratingBar3"
+          style="?android:attr/ratingBarStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:numStars="5"
+          android:rating="3.5"
+          android:stepSize="0.5" />
+
+      <TextView
+          android:id="@+id/mensajeMensaje"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Hola bienvenido"
+          android:visibility="visible" />
+
+    </LinearLayout>
+  </LinearLayout>
+
+</androidx.cardview.widget.CardView>

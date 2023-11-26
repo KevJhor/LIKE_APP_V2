@@ -9,7 +9,7 @@ import com.example.like_app.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterRestActivity : AppCompatActivity() {
 
     // Declaración de las vistas
     private lateinit var editTextFirstName: EditText

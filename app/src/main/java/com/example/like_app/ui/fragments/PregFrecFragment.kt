@@ -32,7 +32,7 @@ class PregFrecFragment : Fragment() {
         btnPed.setOnClickListener{
 
             val navController = requireActivity().findNavController(R.id.nav_host_fragment_content_main) // Asegúrate de que el ID sea el correcto
-            navController.navigate(R.id.fgPpedi)
+            navController.navigate(R.id.fgComentario)
 
         }
         btnEnt.setOnClickListener{

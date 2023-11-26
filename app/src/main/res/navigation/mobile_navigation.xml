@@ -126,6 +126,12 @@
         android:name="com.example.like_app.ui.servicios.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/fgComentario"
+        android:name="com.example.like_app.ui.fragments.ComentariosFragment"
+        android:label="Opiniones"
+        tools:layout="@layout/fragment_comentarios" />
+
 
 
 </navigation>
