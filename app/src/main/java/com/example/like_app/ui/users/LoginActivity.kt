@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.MainActivity
 import com.example.like_app.R
@@ -25,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login_activity)
+        setContentView(R.layout.activity_login)
 
         // Firebase Auth instance
         auth = FirebaseAuth.getInstance()
@@ -86,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -117,12 +117,13 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateToRegisterForm() {
         // Navegar a la pantalla de registro
         Toast.makeText(this, "Navegando al formulario de registro", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
+        val intentclient = Intent(this, RegisterClientActivity::class.java)
+        startActivity(intentclient)
     }
 
     private fun navigateToBusinessRegistration() {
-        // Navegar a la pantalla de registro de negocio
+        val intentrest = Intent(this, RegisterRestActivity::class.java)
+        startActivity(intentrest)
         Toast.makeText(this, "Navegando al registro de negocio", Toast.LENGTH_SHORT).show()
     }
 
