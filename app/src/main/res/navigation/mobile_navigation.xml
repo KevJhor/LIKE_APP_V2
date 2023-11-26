@@ -61,7 +61,11 @@
         android:id="@+id/restFragment"
         android:name="com.example.like_app.ui.fragments.RestFragment"
         android:label="fragment_rest"
-        tools:layout="@layout/fragment_rest" />
+        tools:layout="@layout/fragment_rest" >
+        <action
+            android:id="@+id/action_restFragment_to_detalleItemFragment"
+            app:destination="@id/detalleItemFragment" />
+    </fragment>
 
 
     <fragment
@@ -103,7 +107,25 @@
         android:name="com.example.like_app.ui.fragments.ChatFragment"
         android:label="Chat en linea"
         tools:layout="@layout/fragment_chat" />
-
+    <fragment
+        android:id="@+id/detalleItemFragment"
+        android:name="com.example.like_app.ui.servicios.DetalleItemFragment"
+        android:label="fragment_detalle_item"
+        tools:layout="@layout/fragment_detalle_item" >
+        <action
+            android:id="@+id/action_detalleItemFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.like_app.MainActivity"
+        android:label="app_bar_main"
+        tools:layout="@layout/app_bar_main" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.like_app.ui.servicios.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 
 
 </navigation>

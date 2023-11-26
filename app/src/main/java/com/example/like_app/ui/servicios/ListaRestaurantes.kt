@@ -190,7 +190,7 @@ class ListaRestaurantes : Fragment() , RestauranteAdapter.RecyclerViewEvent {
             Toast.LENGTH_SHORT
         ).show()
         val bundle = Bundle()
-        bundle.putString("clave", rest.nombre)
+        bundle.putString("clave_nombre_rest", rest.nombre)
         findNavController().navigate(R.id.action_listaRestaurantes_to_restFragment, bundle)
 
     }

@@ -10,14 +10,26 @@ import com.example.like_app.R
 import com.example.like_app.model.ItemMenu
 import com.squareup.picasso.Picasso
 
-class ItemMenuAdapter(private var lstItems:List<ItemMenu>)
+class ItemMenuAdapter(private var lstItems:List<ItemMenu>,private val listener:RecyclerViewEvent)
     :RecyclerView.Adapter<ItemMenuAdapter.ViewHolder>(){
     /*LA CLASE VIEW HOLDER VA A TENER LOS ELEMENTOS QUE SE REPITEN*/
-    class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+   inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView),View.OnClickListener{
         val ivItem:ImageView= itemView.findViewById(R.id.ivItem)
         val tvTitle: TextView= itemView.findViewById(R.id.tvITitleItem)
         val tvInfo: TextView= itemView.findViewById(R.id.tvInfo)
         val tvPrice: TextView= itemView.findViewById(R.id.tvPrecioItem)
+
+        init {
+            itemView.setOnClickListener(this)
+
+        }
+
+        override fun onClick(p0: View?) {
+            val position=adapterPosition
+            if(position!=RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
+        }
 
     }
 
@@ -39,5 +51,9 @@ class ItemMenuAdapter(private var lstItems:List<ItemMenu>)
     override fun getItemCount(): Int {
         return lstItems.size
 
+    }
+
+    interface RecyclerViewEvent {
+        fun onItemClick(position:Int)
     }
 }

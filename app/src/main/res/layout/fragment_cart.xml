@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvDelivery"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.servicios.CartFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCartItems"
+        android:layout_width="406dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="406dp"
+        android:layout_height="299dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/imgrectanglemenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvCartItems">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="27dp"
+            android:text="@string/subTotalItemsCart" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="120dp"
+            android:text="@string/TotalPrecio" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="76dp"
+            android:text="@string/DeliveryPrecio" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginEnd="58dp"
+            android:layout_marginBottom="44dp"
+            android:text="@string/valbtnpagar" />
+
+        <TextView
+            android:id="@+id/tvSubTotalCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="71dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvDeliveryCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="70dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvTotalCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="69dp"
+            android:text="TextView" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
