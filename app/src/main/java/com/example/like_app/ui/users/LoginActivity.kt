@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.MainActivity
 import com.example.like_app.R
@@ -63,9 +64,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // Other UI elements and listeners
-        val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
-        val btnRegisterNegocio = findViewById<Button>(R.id.btnRegisterNegocio)
         val tvRegisterPrompt = findViewById<TextView>(R.id.tvRegisterPrompt)
+        /*val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
+        val btnRegisterNegocio = findViewById<Button>(R.id.btnRegisterNegocio)
+
 
         btnRegisterForm.setOnClickListener {
             navigateToRegisterForm()
@@ -73,11 +75,38 @@ class LoginActivity : AppCompatActivity() {
 
         btnRegisterNegocio.setOnClickListener {
             navigateToBusinessRegistration()
-        }
+        }*/
 
         tvRegisterPrompt.setOnClickListener {
             handleRegisterClick()
         }
+    }
+    private fun showRegisterOptions() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_register_options, null)
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
+        /*val options = arrayOf("Registrar como Cliente", "Registrar como Negocio")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Elige una opción")
+            .setItems(options) { dialog, which ->
+                when (which) {
+                    0 -> startActivity(Intent(this, RegisterClientActivity::class.java))
+                    1 -> startActivity(Intent(this, RegisterRestActivity::class.java))
+                }
+            }
+        builder.show()*/
+        dialogView.findViewById<Button>(R.id.btnCliente).setOnClickListener {
+            startActivity(Intent(this, RegisterClientActivity::class.java))
+            dialog.dismiss()
+        }
+
+        dialogView.findViewById<Button>(R.id.btnNegocio).setOnClickListener {
+            startActivity(Intent(this, RegisterRestActivity::class.java))
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun registerWithGmail() {
@@ -129,6 +158,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handleRegisterClick() {
         // Lógica cuando se hace clic en "¿No tienes cuenta? Regístrate"
+        showRegisterOptions()
         Toast.makeText(this, "Manejando clic en registro", Toast.LENGTH_SHORT).show()
     }
 

@@ -25,7 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 
 
-class GestionRestaurante : Fragment() {
+class GestionRestaurantes : Fragment() {
 
 
 
@@ -135,7 +135,7 @@ class GestionRestaurante : Fragment() {
 
         btnMenus.setOnClickListener{
 
-            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus)
+            findNavController().navigate(R.id.action_gestionRestaurantes_to_gestionMenus)
 
         }
 

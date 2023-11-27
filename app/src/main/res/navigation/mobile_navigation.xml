@@ -24,15 +24,6 @@
             app:destination="@id/restFragment" />
     </fragment>
     <fragment
-        android:id="@+id/gestionRestaurante"
-        android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
-        android:label="fragment_gestion_restaurantes"
-        tools:layout="@layout/fragment_gestion_restaurantes" >
-        <action
-            android:id="@+id/action_gestionRestaurante_to_gestionMenus"
-            app:destination="@id/gestionMenus" />
-    </fragment>
-    <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.like_app.ui.home.HomeFragment"
         android:label="fragment_home"
@@ -108,7 +99,15 @@
         android:name="com.example.like_app.ui.fragments.ComentariosFragment"
         android:label="Opiniones"
         tools:layout="@layout/fragment_comentarios" />
-
+    <fragment
+        android:id="@+id/gestionRestaurantes"
+        android:name="com.example.like_app.ui.Gestion.GestionRestaurantes"
+        android:label="Gestion Restaurantes"
+        tools:layout="@layout/fragment_gestion_restaurantes" >
+        <action
+            android:id="@+id/action_gestionRestaurantes_to_gestionMenus"
+            app:destination="@id/gestionMenus" />
+    </fragment>
 
 
 </navigation>
