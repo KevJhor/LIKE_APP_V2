@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.model.ItemMenu
+import com.squareup.picasso.Picasso
 
 class ItemMenuAdapter(private var lstItems:List<ItemMenu>)
     :RecyclerView.Adapter<ItemMenuAdapter.ViewHolder>(){
@@ -17,7 +18,7 @@ class ItemMenuAdapter(private var lstItems:List<ItemMenu>)
         val tvTitle: TextView= itemView.findViewById(R.id.tvITitleItem)
         val tvInfo: TextView= itemView.findViewById(R.id.tvInfo)
         val tvPrice: TextView= itemView.findViewById(R.id.tvPrecioItem)
-        val tvTime: TextView= itemView.findViewById(R.id.tvTime)
+
     }
 
 
@@ -32,8 +33,7 @@ class ItemMenuAdapter(private var lstItems:List<ItemMenu>)
         holder.tvTitle.text=itemMenu.title
         holder.tvInfo.text=itemMenu.info
         holder.tvPrice.text=itemMenu.price
-        holder.tvTime.text=itemMenu.time
-        holder.ivItem.setImageResource(itemMenu.image)
+        Picasso.get().load(itemMenu.imageUrl).into(holder.ivItem)
     }
 
     override fun getItemCount(): Int {

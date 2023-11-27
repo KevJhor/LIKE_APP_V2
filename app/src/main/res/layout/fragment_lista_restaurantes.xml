@@ -34,16 +34,16 @@
 
     <EditText
         android:id="@+id/etBuscar"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
+        android:layout_width="307dp"
+        android:layout_height="51dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="@string/buscar"
+        android:importantForAccessibility="yes"
         android:inputType="text"
         app:layout_constraintStart_toEndOf="@+id/relativeLayout"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        android:importantForAccessibility="yes"/>
+        app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout3"
@@ -89,12 +89,26 @@
 
     </RelativeLayout>
 
+    <ImageButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="105dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ret"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_rest"
-        android:layout_width="409dp"
-        android:layout_height="507dp"
+        android:layout_width="357dp"
+        android:layout_height="418dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        app:layout_constraintVertical_bias="0.509" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,17 @@
 package com.example.like_app.ui.users
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.like_app.MainActivity
 import com.example.like_app.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterClientActivity : AppCompatActivity() {
 
     // Declaración de las vistas
     private lateinit var editTextFirstName: EditText
@@ -18,24 +20,22 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var editTextPhone: EditText
     private lateinit var editTextPassword: EditText
     private lateinit var editTextConfirmPassword: EditText
-    private lateinit var editTextBrandName: EditText
-    private lateinit var editTextRUC: EditText
+    private lateinit var editTextAddress: EditText
     private lateinit var buttonRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_client_register)
 
         // Inicialización de las vistas
-        editTextFirstName = findViewById(R.id.editTextFirstName)
-        editTextLastName = findViewById(R.id.editTextLastName)
-        editTextEmail = findViewById(R.id.editTextEmail)
-        editTextPhone = findViewById(R.id.editTextPhone)
-        editTextPassword = findViewById(R.id.editTextPassword)
-        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword)
-        editTextBrandName = findViewById(R.id.editTextBrandName)
-        editTextRUC = findViewById(R.id.editTextRUC)
-        buttonRegister = findViewById(R.id.buttonRegister)
+        editTextFirstName = findViewById(R.id.etClientName)
+        editTextLastName = findViewById(R.id.etClientSurname)
+        editTextEmail = findViewById(R.id.etClientEmail)
+        editTextPhone = findViewById(R.id.etClientPhone)
+        editTextPassword = findViewById(R.id.etClientPassword)
+        editTextConfirmPassword = findViewById(R.id.etConfirmPassword)
+        editTextAddress = findViewById(R.id.etAddress)
+        buttonRegister = findViewById(R.id.btnClientRegister)
 
         // Establecer listener para el botón de registro
         buttonRegister.setOnClickListener {
@@ -51,8 +51,7 @@ class RegisterActivity : AppCompatActivity() {
         val phone = editTextPhone.text.toString().trim()
         val password = editTextPassword.text.toString().trim()
         val confirmPassword = editTextConfirmPassword.text.toString().trim()
-        val brandName = editTextBrandName.text.toString().trim()
-        val ru = editTextRUC.text.toString().trim()
+        val address = editTextAddress.text.toString().trim()
 
         // Validar los campos
         if (firstName.isEmpty()) {
@@ -76,14 +75,7 @@ class RegisterActivity : AppCompatActivity() {
         if (email.isEmpty()) {
             editTextEmail.error = "El correo electrónico es obligatorio"
             return
-
         }
-
-        if (!email.contains("@")) {
-            editTextEmail.error = "Introduce un correo electrónico válido"
-            return
-        }
-
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             editTextEmail.error = "Introduce un correo electrónico válido"
             return
@@ -102,7 +94,6 @@ class RegisterActivity : AppCompatActivity() {
             editTextPassword.error = "La contraseña es obligatoria"
             return
         }
-
         if (password.length < 6) {
             editTextPassword.error = "La contraseña debe tener al menos 6 caracteres"
             return
@@ -112,27 +103,17 @@ class RegisterActivity : AppCompatActivity() {
             editTextConfirmPassword.error = "Confirma tu contraseña"
             return
         }
-
         if (password != confirmPassword) {
             editTextConfirmPassword.error = "Las contraseñas no coinciden"
             return
         }
 
-        if (brandName.isEmpty()) {
-            editTextBrandName.error = "El nombre de la marca es obligatorio"
+        if (address.isEmpty()) {
+            editTextAddress.error = "La dirección es obligatoria"
             return
         }
 
-        if (ru.isEmpty()) {
-            editTextRUC.error = "El número de RUC es obligatorio"
-            return
-        }
-        if (ru.length != 11) {
-            editTextRUC.error = "El RUC debe tener 11 dígitos"
-            return
-        }
-
-        // Aquí puedes agregar la lógica para registrar al usuario, por ejemplo, guardar los datos en una base de datos o enviarlos a un servidor
+        // Aquí puedes agregar la lógica para registrar al usuario
         val auth = FirebaseAuth.getInstance()
 
         // Registrar al usuario con correo electrónico y contraseña en Firebase Authentication
@@ -149,8 +130,7 @@ class RegisterActivity : AppCompatActivity() {
                         "lastName" to lastName,
                         "email" to email,
                         "phone" to phone,
-                        "brandName" to brandName,
-                        "ruc" to ru
+                        "address" to address
                     )
 
                     userId?.let {
@@ -161,6 +141,11 @@ class RegisterActivity : AppCompatActivity() {
                                     "Usuario registrado con éxito",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+                                // Navegar a MainActivity o a otra actividad después del registro exitoso
+                                val intent = Intent(this, MainActivity::class.java)
+                                startActivity(intent)
+                                finish() // Finaliza esta actividad
                             }
                             .addOnFailureListener { e ->
                                 Toast.makeText(
