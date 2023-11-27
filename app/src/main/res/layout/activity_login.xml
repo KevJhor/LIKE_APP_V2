@@ -7,18 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.users.LoginActivity">
 
-
-    <Button
-        android:id="@+id/btnRegisterForm"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="164dp"
-        android:backgroundTint="#3EBE96"
-        android:text="Registrate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="300dp"
@@ -41,17 +29,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/btnRegisterNegocio"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="48dp"
-        android:backgroundTint="#3EBE96"
-        android:text="Registra tu Negocio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="413dp"
@@ -71,7 +48,6 @@
         android:text="¿No tienes cuenta? Regístrate"
         android:textColor="@color/colorLink"
         android:textSize="20sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -96,7 +72,7 @@
         android:layout_marginEnd="72dp"
         android:ems="10"
         android:hint="@string/valetPassword"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUser" />
 
