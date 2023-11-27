@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso
 class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,private val listener:RecyclerViewEvent)
     : RecyclerView.Adapter<RestauranteAdapter.ViewHolder>(){
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView),View.OnClickListener {
-
         val ivItemRest: ImageView = itemView.findViewById(R.id.ivItemRest)
         val tvNombreRest: TextView = itemView.findViewById(R.id.tvNomRest)
         val tvTiempoRest: TextView = itemView.findViewById(R.id.tvTiempoRest)
@@ -32,8 +31,6 @@ class RestauranteAdapter(private var lstRestaurantes:List<RestauranteModel>,priv
 
 
     }
-
-
     fun actualizarLista(nuevaLista: List<RestauranteModel>) {
         lstRestaurantes = nuevaLista
         notifyDataSetChanged()

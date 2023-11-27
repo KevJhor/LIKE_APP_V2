@@ -143,6 +143,20 @@ Crea o modifica las categorias menus
     <string name="etImgMenu">Url DE LA IMAGEN</string>
     <string name="title_activity_restaurante">RestauranteActivity</string>
     <string name="notificaciones">Notificaciones</string>
+    <string name="addToCart">Agrega al carrito</string>
+    <string name="loremp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dignissim, arcu vitae volutpat semper, libero orci condimentum felis, vel iaculis nibh diam non est. Cras maximus felis quis mi aliquam gravida. Nulla dignissim hendrerit nulla, ut cursus purus commodo sit amet. Phasellus non nulla sem.</string>
+    <string name="labelPrecio">Precio</string>
+    <string name="subTotalItemsCart">Sub Total Items</string>
+    <string name="DeliveryPrecio">Delivery Precio</string>
+    <string name="TotalPrecio">Total Precio</string>
+    <string name="btnPagar" />
+
+    !-- PARA BOTONES-->
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
     <string name="default_web_client_id">AIzaSyB2FlHUE2IvWFhJL4Bo8eeJTqWXy-UtmaY</string>
     <string name="LoginActivity">LoginActivity</string>
 
