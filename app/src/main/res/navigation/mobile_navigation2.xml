@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_notificaciones" />
     <fragment
         android:id="@+id/gestionRestaurante2"
-        android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
+        android:name="com.example.like_app.ui.Gestion.GestionRestaurantes"
         android:label="fragment_gestion_restaurantes"
         tools:layout="@layout/fragment_gestion_restaurantes" />
 

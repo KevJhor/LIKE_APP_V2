@@ -135,7 +135,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         }
         btnMenus.setOnClickListener{
 
-            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus)
+            findNavController().navigate(R.id.action_gestionRestaurantes_to_gestionMenus)
 
         }
         return view

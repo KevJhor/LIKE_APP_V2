@@ -7,27 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".ui.users.LoginActivity">
 
+
+    <!--<Button
+        android:id="@+id/btnRegisterForm"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="164dp"
+        android:backgroundTint="#3EBE96"
+        android:text="Registrate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.227" />-->
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="212dp"
         android:backgroundTint="#3EBE96"
         android:text="Ingresar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintVertical_bias="0.264" />
+
+    <!--<Button
+        android:id="@+id/btnRegisterNegocio"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#3EBE96"
+        android:text="Registra tu Negocio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterEmail"
+        app:layout_constraintVertical_bias="0.25" />-->
 
     <Button
         android:id="@+id/btnRegisterEmail"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="56dp"
         android:backgroundTint="#3EBE96"
         android:text="Registrate con Gmail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -41,16 +70,18 @@
         android:id="@+id/tvRegisterPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="696dp"
+        android:layout_marginTop="68dp"
         android:clickable="true"
         android:focusable="true"
         android:onClick="handleRegisterClick"
         android:text="¿No tienes cuenta? Regístrate"
+
         android:textColor="@color/colorLink"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterEmail" />
 
     <EditText
         android:id="@+id/etUser"
