@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.MainActivity
 import com.example.like_app.R
@@ -36,10 +36,13 @@ class LoginActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        // Existing code for email/password login
+
+        // UI elements and listeners
         val etUser: EditText = findViewById(R.id.etUser)
         val etPassword: EditText = findViewById(R.id.etPassword)
         val btnLogin: Button = findViewById(R.id.btnLogin)
+        val btnRegisterEmail = findViewById<Button>(R.id.btnRegisterEmail)
+        val tvRegisterPrompt = findViewById<TextView>(R.id.tvRegisterPrompt)
 
         btnLogin.setOnClickListener {
             val correo = etUser.text.toString()
@@ -56,23 +59,8 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
-        // Button for Gmail registration
-        val btnRegisterEmail = findViewById<Button>(R.id.btnRegisterEmail)
         btnRegisterEmail.setOnClickListener {
             registerWithGmail()
-        }
-
-        // Other UI elements and listeners
-        val btnRegisterForm = findViewById<Button>(R.id.btnRegisterForm)
-        val btnRegisterNegocio = findViewById<Button>(R.id.btnRegisterNegocio)
-        val tvRegisterPrompt = findViewById<TextView>(R.id.tvRegisterPrompt)
-
-        btnRegisterForm.setOnClickListener {
-            navigateToRegisterForm()
-        }
-
-        btnRegisterNegocio.setOnClickListener {
-            navigateToBusinessRegistration()
         }
 
         tvRegisterPrompt.setOnClickListener {
@@ -85,7 +73,6 @@ class LoginActivity : AppCompatActivity() {
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -105,31 +92,35 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success
                     startActivity(Intent(this, MainActivity::class.java))
                 } else {
-                    // If sign in fails, display a message to the user.
                     Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
                 }
             }
     }
 
+    private fun handleRegisterClick() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Elija el tipo de cuenta que desea crear")
+
+        builder.setPositiveButton("Cliente") { _, _ ->
+            navigateToRegisterForm()
+        }
+        builder.setNegativeButton("Empresa") { _, _ ->
+            navigateToBusinessRegistration()
+        }
+
+        builder.show()
+    }
+
     private fun navigateToRegisterForm() {
-        // Navegar a la pantalla de registro
-        Toast.makeText(this, "Navegando al formulario de registro", Toast.LENGTH_SHORT).show()
-        val intentclient = Intent(this, RegisterClientActivity::class.java)
-        startActivity(intentclient)
+        val intent = Intent(this, RegisterClientActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToBusinessRegistration() {
-        val intentrest = Intent(this, RegisterRestActivity::class.java)
-        startActivity(intentrest)
-        Toast.makeText(this, "Navegando al registro de negocio", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun handleRegisterClick() {
-        // Lógica cuando se hace clic en "¿No tienes cuenta? Regístrate"
-        Toast.makeText(this, "Manejando clic en registro", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, RegisterRestActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {
