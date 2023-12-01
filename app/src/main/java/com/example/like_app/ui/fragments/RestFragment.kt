@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -56,11 +58,19 @@ class RestFragment : Fragment(), ItemMenuAdapter.RecyclerViewEvent  {
         val tvNombreRest:TextView=view.findViewById(R.id.tvNombreRest)
         val tvHorario:TextView=view.findViewById(R.id.tvScheduleRest)
         val tvDireccion:TextView=view.findViewById(R.id.tvAddressRest)
+        val buttonOp: Button = view.findViewById(R.id.button9)
         //LISTAS PARA MIS RecyclerViews
         val listCategorias:ArrayList<MenuModel> = ArrayList()
         //var lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
         val auth = FirebaseAuth.getInstance()
         val db= FirebaseFirestore.getInstance()
+
+        val btnO: Button = view.findViewById(R.id.button9)
+
+        btnO.setOnClickListener {
+            val navController = requireActivity().findNavController(R.id.nav_host_fragment_content_main)
+            navController.navigate(R.id.fgComentario)
+        }
 
         //LLENAR DATOS DE RESTAURANTE
         db.collection("datos_empresa")

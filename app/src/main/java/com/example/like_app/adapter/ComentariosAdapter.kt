@@ -11,6 +11,7 @@ import com.example.like_app.R
 import com.example.like_app.model.ComentarioModel
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.Query
 
 class ComentariosAdapter(private val query: com.google.firebase.firestore.Query) : RecyclerView.Adapter<ComentariosAdapter.ComentarioViewHolder>() {
 
@@ -45,7 +46,8 @@ class ComentariosAdapter(private val query: com.google.firebase.firestore.Query)
 
     fun startListening() {
         if (listenerRegistration == null) {
-            listenerRegistration = query.addSnapshotListener { snapshots, exception ->
+            listenerRegistration = query.orderBy("hora", Query.Direction.ASCENDING)
+                .addSnapshotListener { snapshots, exception ->
                 if (exception != null) {
                     // Manejar error
                     return@addSnapshotListener
