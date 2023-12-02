@@ -13,19 +13,19 @@
             android:id="@+id/listaRestaurantes"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/vallistRest" />
-        <item
+       <!-- <item
             android:id="@+id/list_Rest_Fragment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/vallistRestFrag" />
-        <item
+            android:title="@string/vallistRestFrag" />-->
+   <!--     <item
             android:id="@+id/listaTiendas"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/vallistTienda" />
-
-        <item
+-->
+       <!-- <item
             android:id="@+id/notificaciones"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/notificaciones" />
+            android:title="@string/notificaciones" />-->
         <item
             android:id="@+id/pregFrecFragment"
             android:icon="@drawable/ic_menu_slideshow"
@@ -38,10 +38,10 @@
             android:id="@+id/gestionRestaurante"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/valgestionRest"/>
-        <item
+      <!--  <item
             android:id="@+id/chkdepoFragment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/valchkDepo"/>
+            android:title="@string/valchkDepo"/>-->
 
     </group>
 </menu>

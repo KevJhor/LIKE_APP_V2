@@ -169,6 +169,47 @@ class RegisterRestActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
+                        val imgDefecto="https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-perfil-an%C3%B3nimo-icono-de-la-cara-persona-silueta-gris-avatar-masculino-por-defecto-foto-de.jpg"
+                        val portada="https://t3.ftcdn.net/jpg/03/45/63/64/360_F_345636439_ejSSimOdYlqo4SznKC55zJJTmgnsgX1B.jpg"
+
+                        val brand = userMap["brandName"] ?: ""
+                        val restMap = hashMapOf(
+                            "address" to "",
+                            "brand_name" to brandName,
+                            "imageUrl" to imgDefecto,
+                            "portada" to portada,
+                            "schedule" to "",
+                        )
+
+                        //ALMACENAR EN COLECCION
+                        db.collection("Restaurante").add(restMap)
+                            .addOnSuccessListener {
+
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(
+                                    this,
+                                    "Error al guardar información en coleccion restaurante: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+                        //CREAR MENU
+                        db.collection("menu").document(brand).set(hashMapOf<String, Any>())
+                            .addOnSuccessListener {
+                                // El documento se creó exitosamente
+
+                            }
+                            .addOnFailureListener { e ->
+                                // Manejar el error al crear el documento
+                                Toast.makeText(
+                                    this,
+                                    "Error al guardar información en coleccion menu: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
+
                     }
                 } else {
                     // Error al registrar al usuario

@@ -141,12 +141,8 @@
     <fragment
         android:id="@+id/historialRestFragment"
         android:name="com.example.like_app.ui.fragments.HistorialRestFragment"
-        android:label="fragment_historial_rest"
-        tools:layout="@layout/fragment_historial_rest" />
-        android:id="@+id/gestionRestaurante"
-        android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
-        android:label="Gestion Restaurantes"
-        tools:layout="@layout/fragment_gestion_restaurantes" >
+        android:label="Ordenes"
+        tools:layout="@layout/fragment_historial_rest">
         <action
             android:id="@+id/action_gestionRestaurantes_to_gestionMenus"
             app:destination="@id/gestionMenus" />

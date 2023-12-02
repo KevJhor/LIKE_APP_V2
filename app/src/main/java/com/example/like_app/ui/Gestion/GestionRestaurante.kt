@@ -42,7 +42,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         val view: View = binding.root
         val ivLogo:ImageView=view.findViewById(R.id.ivLogo)
         val ivPortada:ImageView=view.findViewById(R.id.ivPortada)
-        val brandName="Tanta"
+        val brandName="KFC"
         val tvNombre:TextView=view.findViewById(R.id.tvBrandNameGestRest)
         val tvHorario:TextView=view.findViewById(R.id.tvHorarioRest)
         val tvDireccion:TextView=view.findViewById(R.id.tvDireccion)
