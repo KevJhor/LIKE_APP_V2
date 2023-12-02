@@ -14,14 +14,15 @@ class EstadoFragment : Fragment() {
 
     private lateinit var imageEstado: ConstraintLayout
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view:View =  inflater.inflate(R.layout.fragment_chkdepo, container, false)
+        val view:View =  inflater.inflate(R.layout.estado_entrega, container, false)
         imageEstado = view.findViewById(R.id.constraintLayout4)
+
+
 
 
 

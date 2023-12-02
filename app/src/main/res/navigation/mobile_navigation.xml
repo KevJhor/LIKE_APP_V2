@@ -127,7 +127,7 @@
         android:label="Opiniones"
         tools:layout="@layout/fragment_comentarios" />
     <fragment
-        android:id="@+id/gestionRestaurantes"
+        android:id="@+id/gestionRestaurante"
         android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
         android:label="Gestion Restaurantes"
         tools:layout="@layout/fragment_gestion_restaurantes" >
@@ -142,7 +142,23 @@
     <fragment
         android:id="@+id/payonlineFragment"
         android:name="com.example.like_app.ui.payonline.PayonlineFragment"
-        android:label="PayonlineFragment" />
+        android:label="PayonlineFragment" >
+        <action
+            android:id="@+id/action_payonlineFragment_to_depositoFragment"
+            app:destination="@id/depositoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estadoFragment"
+        android:name="com.example.like_app.ui.fragments.EstadoFragment"
+        android:label="EstadoFragment" />
+    <fragment
+        android:id="@+id/depositoFragment"
+        android:name="com.example.like_app.ui.payonline.DepositoFragment"
+        android:label="DepositoFragment" >
+        <action
+            android:id="@+id/action_depositoFragment_to_estadoFragment"
+            app:destination="@id/estadoFragment" />
+    </fragment>
 
 
 </navigation>

@@ -137,7 +137,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         btnMenus.setOnClickListener{
             val bundle = Bundle()
             bundle.putString("clave_nombre_rest",brandName )
-            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus,bundle)
+            findNavController().navigate(R.id.action_gestionRestaurantes_to_gestionMenus,bundle)
 
         }
         return view
