@@ -118,8 +118,8 @@
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_cartFragment_to_depositoFragment"
-            app:destination="@id/depositoFragment" />
+            android:id="@+id/action_cartFragment_to_payonlineFragment"
+            app:destination="@id/payonlineFragment" />
     </fragment>
     <fragment
         android:id="@+id/fgComentario"
@@ -136,9 +136,13 @@
             app:destination="@id/gestionMenus" />
     </fragment>
     <fragment
-        android:id="@+id/depositoFragment"
-        android:name="com.example.like_app.ui.payonline.DepositoFragment"
-        android:label="DepositoFragment" />
+        android:id="@+id/addcardFragment"
+        android:name="com.example.like_app.ui.payonline.AddcardFragment"
+        android:label="AddcardFragment" />
+    <fragment
+        android:id="@+id/payonlineFragment"
+        android:name="com.example.like_app.ui.payonline.PayonlineFragment"
+        android:label="PayonlineFragment" />
 
 
 </navigation>

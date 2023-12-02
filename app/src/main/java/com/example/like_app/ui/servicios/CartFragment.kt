@@ -55,7 +55,7 @@ class CartFragment : Fragment() ,CartAdapter.CartAdapterListener{
         rvCartItems.layoutManager = layoutManager
 
         btnPagar.setOnClickListener {
-            findNavController().navigate(R.id.action_detalleItemFragment_to_cartFragment)
+            findNavController().navigate(R.id.action_cartFragment_to_payonlineFragment)
 
         }
 

@@ -14,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LIKE_APP"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.payonline.CardActivity"
-            android:exported="false" />
+
         <activity
             android:name=".RestauranteActivity"
             android:exported="false"
