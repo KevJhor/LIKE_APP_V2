@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LIKE_APP"
         tools:targetApi="31">
         <activity
+            android:name=".ui.payonline.CardActivity"
+            android:exported="false" />
+        <activity
             android:name=".RestauranteActivity"
             android:exported="false"
             android:label="@string/title_activity_restaurante"
@@ -23,17 +26,17 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LIKE_APP.NoActionBar"></activity>
+            android:theme="@style/Theme.LIKE_APP.NoActionBar" />
         <activity
             android:name=".ui.users.RegisterRestActivity"
             android:exported="true" />
-        <activity android:name=".ui.users.RegisterClientActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".ui.users.RegisterClientActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.users.LoginActivity"
             android:exported="true"
             android:label="@string/LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

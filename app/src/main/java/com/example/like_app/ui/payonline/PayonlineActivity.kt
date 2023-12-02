@@ -16,7 +16,7 @@ class PayonlineActivity : AppCompatActivity() {
         val btnaddcredito: Button = findViewById(R.id.btncredito)
 
         btndepcuenta.setOnClickListener{
-            val intent = Intent(this, DepositoActivity::class.java)
+            val intent = Intent(this, DepositoFragment::class.java)
             startActivity(intent)
         }
         btnaddcredito.setOnClickListener {

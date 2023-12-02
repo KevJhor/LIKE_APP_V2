@@ -116,7 +116,11 @@
         android:id="@+id/cartFragment"
         android:name="com.example.like_app.ui.servicios.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_depositoFragment"
+            app:destination="@id/depositoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fgComentario"
         android:name="com.example.like_app.ui.fragments.ComentariosFragment"
@@ -131,6 +135,10 @@
             android:id="@+id/action_gestionRestaurantes_to_gestionMenus"
             app:destination="@id/gestionMenus" />
     </fragment>
+    <fragment
+        android:id="@+id/depositoFragment"
+        android:name="com.example.like_app.ui.payonline.DepositoFragment"
+        android:label="DepositoFragment" />
 
 
 </navigation>

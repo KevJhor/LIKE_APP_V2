@@ -29,7 +29,7 @@ import java.util.Currency
 import java.util.Locale
 
 
-class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
+class GestionRestaurantes : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
     private var _binding: FragmentGestionRestaurantesBinding? = null
     private lateinit var navController: NavController
     private val binding get() = _binding!!
@@ -43,7 +43,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         val ivLogo:ImageView=view.findViewById(R.id.ivLogo)
         val ivPortada:ImageView=view.findViewById(R.id.ivPortada)
         val brandName="KFC"
-        val tvNombre:TextView=view.findViewById(R.id.tvBrandNameRest)
+        val tvNombre:TextView=view.findViewById(R.id.tvNroOrden)
         val tvHorario:TextView=view.findViewById(R.id.tvHorarioRest)
         val tvDireccion:TextView=view.findViewById(R.id.tvDireccionRest)
 

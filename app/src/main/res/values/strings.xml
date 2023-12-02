@@ -157,6 +157,7 @@ Crea o modifica las categorias menus
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
     <string name="default_web_client_id">AIzaSyB2FlHUE2IvWFhJL4Bo8eeJTqWXy-UtmaY</string>
     <string name="LoginActivity">LoginActivity</string>
 
