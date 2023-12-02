@@ -42,10 +42,10 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         val view: View = binding.root
         val ivLogo:ImageView=view.findViewById(R.id.ivLogo)
         val ivPortada:ImageView=view.findViewById(R.id.ivPortada)
-        val brandName="KFC"
-        val tvNombre:TextView=view.findViewById(R.id.tvBrandNameRest)
+        val brandName="Tanta"
+        val tvNombre:TextView=view.findViewById(R.id.tvBrandNameGestRest)
         val tvHorario:TextView=view.findViewById(R.id.tvHorarioRest)
-        val tvDireccion:TextView=view.findViewById(R.id.tvDireccionRest)
+        val tvDireccion:TextView=view.findViewById(R.id.tvDireccion)
 
         val btnMenus:Button=view.findViewById(R.id.btnMenus)
         //LISTAS PARA MIS RecyclerViews
@@ -53,7 +53,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         val lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
         val db=FirebaseFirestore.getInstance()
 
-        db.collection("datos_empresa")
+        db.collection("Restaurante")
             .whereEqualTo("brand_name",brandName)
             .get().addOnSuccessListener {snap->
                 if(!snap.isEmpty){
@@ -62,9 +62,9 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
                         document["brand_name"].toString(),
                         document["schedule"].toString(),
                         document["address"].toString(),
-                        document["logo"].toString(),
+                        document["imageUrl"].toString(),
                         document["portada"].toString()
-                        )
+                    )
                     //Log.i("TAG", "url imagen ${datosRest.img_logo_url}")
                     //tvNombre.text=datosRest.brand_name
                     llenaDatos(datosRest,ivLogo,ivPortada,tvNombre,tvHorario,tvDireccion)
@@ -76,7 +76,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
 
             }.addOnFailureListener { exception ->
                 // Manejar errores
-               Log.i("GESTION_REST", "Error al buscar el documento", exception)
+                Log.i("GESTION_REST", "Error al buscar el documento", exception)
             }
 
 
@@ -93,6 +93,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
                 lstItemsMenu.clear()
 
                 val datos = snap.data
+
                 if (datos != null) {
                     // Iterar sobre las secciones (Sandwiches, Hamburguesas, Almuerzos, etc.)
                     for ((seccion,platosMap) in datos) {
@@ -116,7 +117,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
 
                     }
                     //SE LLENA LA BARRAR HORIZONTAL DE CATEGORIAS
-                    val rvbtnmenus:RecyclerView=view.findViewById(R.id.rvBtnMenus)
+                    val rvbtnmenus: RecyclerView =view.findViewById(R.id.rvBtnMenus)
                     rvbtnmenus.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                     rvbtnmenus.adapter=com.example.like_app.adapter.MenuAdapter(listCategorias)
 
@@ -134,8 +135,9 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
 
         }
         btnMenus.setOnClickListener{
-
-            findNavController().navigate(R.id.action_gestionRestaurantes_to_gestionMenus)
+            val bundle = Bundle()
+            bundle.putString("clave_nombre_rest",brandName )
+            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus,bundle)
 
         }
         return view
@@ -153,7 +155,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         _binding = null
     }
     override fun onItemClick(position: Int) {
-
+        Log.i("gestRest","ENTRE AL GEST REST")
     }
 
     //UTILIDEADES

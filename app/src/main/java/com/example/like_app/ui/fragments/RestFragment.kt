@@ -73,7 +73,7 @@ class RestFragment : Fragment(), ItemMenuAdapter.RecyclerViewEvent  {
         }
 
         //LLENAR DATOS DE RESTAURANTE
-        db.collection("datos_empresa")
+        db.collection("Restaurante")
             .whereEqualTo("brand_name",brand_name)
             .get().addOnSuccessListener {snap->
                 if(!snap.isEmpty){
@@ -82,7 +82,7 @@ class RestFragment : Fragment(), ItemMenuAdapter.RecyclerViewEvent  {
                         document["brand_name"].toString(),
                         document["schedule"].toString(),
                         document["address"].toString(),
-                        document["logo"].toString(),
+                        document["imageUrl"].toString(),
                         document["portada"].toString()
                     )
                     //Log.i("TAG", "url imagen ${datosRest.img_logo_url}")

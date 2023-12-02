@@ -138,7 +138,7 @@ Crea o modifica las categorias menus
     <string name="valetEmail">Correo</string>
     <string name="valetPassword">Password</string>
     <string name="nombrePlato">Ingresa nombre del plato</string>
-    <string name="tvRegistroMenu">REGISTRA TUS PPLATOS</string>
+    <string name="tvRegistroMenu">Agrega items a tus categorias</string>
     <string name="btnModifCate">Modificar</string>
     <string name="etImgMenu">Url DE LA IMAGEN</string>
     <string name="title_activity_restaurante">RestauranteActivity</string>
@@ -157,7 +157,12 @@ Crea o modifica las categorias menus
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
     <string name="default_web_client_id">AIzaSyB2FlHUE2IvWFhJL4Bo8eeJTqWXy-UtmaY</string>
     <string name="LoginActivity">LoginActivity</string>
+    <string name="hintPrecioGestMenu">Ingrese precio del item</string>
+    <string name="hintDescripMenu">Ingrese la Descripción</string>
+    <string name="lblAgregaCateGestionMenu">Selecciona a que categoria agregar el item</string>
+    <string name="textTitlteModifItem">Modificar Item</string>
 
 </resources>

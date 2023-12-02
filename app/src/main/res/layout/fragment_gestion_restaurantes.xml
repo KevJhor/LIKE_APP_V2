@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
 
     <TextView
-        android:id="@+id/tvNroOrden"
+        android:id="@+id/tvBrandNameGestRest"
         android:layout_width="188dp"
         android:layout_height="25dp"
         android:layout_marginStart="24dp"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/tvDireccionRest"
+        android:id="@+id/tvDireccion"
         android:layout_width="194dp"
         android:layout_height="19dp"
         android:layout_marginStart="24dp"
