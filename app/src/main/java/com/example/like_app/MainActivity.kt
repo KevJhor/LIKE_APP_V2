@@ -11,12 +11,15 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.like_app.Interface.IEstado
 import com.example.like_app.databinding.ActivityMainBinding
+import com.example.like_app.ui.fragments.EstadoFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IEstado {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +43,17 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.atenClientFragment,R.id.homeFragment,R.id.pregFrecFragment,R.id.list_Rest_Fragment,R.id.notificaciones,
-                R.id.listaRestaurantes, R.id.listaTiendas, R.id.fragment_Rest, R.id.gestionRestaurantes
+                R.id.listaRestaurantes, R.id.listaTiendas, R.id.fragment_Rest, R.id.gestionRestaurante
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onChangeBackground(backgroundResource: Int) {
+        val estadosFragment =
+            supportFragmentManager.findFragmentByTag("EstadosFragment") as EstadoFragment?
+        estadosFragment?.changeBackground(backgroundResource)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

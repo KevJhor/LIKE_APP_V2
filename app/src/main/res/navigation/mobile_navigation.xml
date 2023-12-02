@@ -128,7 +128,7 @@
         tools:layout="@layout/fragment_comentarios" />
     <fragment
         android:id="@+id/gestionRestaurantes"
-        android:name="com.example.like_app.ui.Gestion.GestionRestaurantes"
+        android:name="com.example.like_app.ui.Gestion.GestionRestaurante"
         android:label="Gestion Restaurantes"
         tools:layout="@layout/fragment_gestion_restaurantes" >
         <action

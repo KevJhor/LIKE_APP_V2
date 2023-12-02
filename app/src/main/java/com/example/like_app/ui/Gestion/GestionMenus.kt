@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 
 class GestionMenus : Fragment() {
+    private  lateinit  var brand_name:String
     var misCategorias:List<String> = emptyList()
 
     override fun onCreateView(
@@ -46,7 +47,11 @@ class GestionMenus : Fragment() {
         val btnAgregarPlato:Button=view.findViewById(R.id.btnAgregarPlato)
         //PARA FIRBEASE
         val db=FirebaseFirestore.getInstance()
-        val brand_name="KFC";
+
+
+        val arguments = requireArguments()
+        brand_name= arguments.getString("clave_nombre_rest").toString()
+
         val docRef = db.collection("menu").document(brand_name)
         //VARIABLES GLOBALES:
         var categoria:String=""

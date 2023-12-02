@@ -55,7 +55,7 @@ class CartAdapter(  private var list:List<CartModel>) : RecyclerView.Adapter<Car
         holder.tvCartItemCount.text=itemCart.quantity.toString()
         count=holder.tvCartItemCount.text.toString().toInt()
         setSubTotal(holder.tvSubTotalCart,count,itemCart.price.toDouble())
-
+        Log.i("tagPoistion","$position")
         holder.btnIncrement.setOnClickListener {
             count++
             amount= amount+getSubTotal(1,itemCart.price.toDouble())
@@ -76,6 +76,7 @@ class CartAdapter(  private var list:List<CartModel>) : RecyclerView.Adapter<Car
 
         }
     }
+
     fun getSubTotal(cantidad:Int,precio:Double):Double {
         val subTotal = cantidad * precio
         return  subTotal
