@@ -21,6 +21,7 @@ import com.example.like_app.model.Message
 import com.example.like_app.adapter.MessageAdapter
 import com.google.android.gms.tasks.Task
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
@@ -37,7 +38,9 @@ class ChatFragment : Fragment() {
     private val messageCollection = db.collection("messages")
     private val messages = mutableListOf<Message>()
     private lateinit var messageAdapter: MessageAdapter
-
+    private var usuario = ""
+    private var nameU = ""
+    private var lastU = ""
     private val PHOTO_SEND = 1
     private val PHOTO_PERFIL = 2
     private lateinit var rvMensajes: RecyclerView
@@ -76,6 +79,36 @@ class ChatFragment : Fragment() {
         loadMessages()
 
 
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+
+        currentUser?.let { user ->
+            val userID = user.uid
+
+            val db = FirebaseFirestore.getInstance()
+            val usersCollection = db.collection("users")
+
+
+
+            usersCollection.document(userID)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        nameU = document.getString("firstName").toString()
+                        lastU = document.getString("lastName").toString()
+                        usuario = nameU + " " + lastU
+                    } else {
+                        // El documento no existe o está vacío
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    // Manejar errores al obtener el nombre de usuario
+                }
+
+
+        }
+
+
         btnEnviarFoto.setOnClickListener{
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/jpeg"
@@ -89,8 +122,8 @@ class ChatFragment : Fragment() {
             if (messageText.isNotEmpty()) {
                 val newMessage = Message(
                     mensaje = messageText,
-                    nombre = "NombreEjemplo",  // Puedes cambiar esto según tus necesidades
-                    fotoPerfil = "URLFotoPerfilEjemplo",  // Puedes cambiar esto según tus necesidades
+                    nombre = usuario,
+                    fotoPerfil = "URLFotoPerfilEjemplo",
                     type_mensaje = "1",
                     hora = Timestamp.now()
                 )

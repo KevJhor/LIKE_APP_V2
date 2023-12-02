@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.like_app.R
 import com.example.like_app.adapter.ComentariosAdapter
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -27,7 +28,9 @@ class ComentariosFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var comentariosAdapter: ComentariosAdapter
     private lateinit var firestoreDB: FirebaseFirestore
-
+    private var usuario = ""
+    private var nameU = ""
+    private var lastU = ""
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -44,20 +47,80 @@ class ComentariosFragment : Fragment() {
         val califi: RatingBar = view.findViewById(R.id.ratingBar2)
 
 
+        val auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+
+        currentUser?.let { user ->
+            val userID = user.uid
+
+            val db = FirebaseFirestore.getInstance()
+            val usersCollection = db.collection("users")
+
+
+
+            usersCollection.document(userID)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        nameU = document.getString("firstName").toString()
+                        lastU = document.getString("lastName").toString()
+                        usuario = nameU + " " + lastU
+                    } else {
+                        // El documento no existe o está vacío
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    // Manejar errores al obtener el nombre de usuario
+                }
+
+
+        }
+
+        val db = FirebaseFirestore.getInstance()
+        val comentariosCollection = db.collection("comentarios")
+
+        comentariosCollection
+            .whereEqualTo("nombre", usuario)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (documents != null && !documents.isEmpty) {
+                    //comentario.setText("Si")
+                    btnEnviar.visibility = View.VISIBLE
+                    comentario.visibility = View.VISIBLE
+                } else {
+                    //comentario.setText("No")
+                    btnEnviar.visibility = View.GONE
+                    comentario.visibility = View.GONE
+                }
+            }
+            .addOnFailureListener { exception ->
+                // Manejar errores al consultar la colección de comentarios
+                println("Error al obtener comentarios: ${exception.message}")
+            }
+
+
+
 
         btnEnviar.setOnClickListener {
             EnviarComentario(comentario.text.toString(),califi)
             comentario.setText("")
+            btnEnviar.visibility = View.GONE
+            comentario.visibility = View.GONE
         }
         return view
     }
 
+
+
+
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun EnviarComentario(txt: String, estrella: RatingBar){
         val hora = LocalDateTime.now()
-        val hora_24 = hora.format(DateTimeFormatter.ofPattern("HH:mm a"))
+        val hora_24 = hora.format(DateTimeFormatter.ofPattern("dd/MM HH:mm"))
         val comentario = hashMapOf(
-            "nombre" to "Lazaro Fuller",
+            "nombre" to usuario,
             "hora" to hora_24.toString(),
             "calificacion" to estrella.rating,
             "mensaje" to txt
@@ -68,6 +131,7 @@ class ComentariosFragment : Fragment() {
                 .add(comentario)
                 .addOnSuccessListener { documentReference ->
                     // La colección se ha creado exitosamente
+
                 }
                 .addOnFailureListener { e ->
                     // Error al crear la colección
@@ -86,21 +150,21 @@ class ComentariosFragment : Fragment() {
             adapter = comentariosAdapter
         }
         comentariosAdapter.startListening()
-       /* val comentario = hashMapOf(
-            "nombre" to "Usuario Ejemplo",
-            "hora" to "12:00",
-            "calificacion" to 5.0,
-            "mensaje" to "¡Hola, este es un comentario de prueba!"
-        )
+        /* val comentario = hashMapOf(
+             "nombre" to "Usuario Ejemplo",
+             "hora" to "12:00",
+             "calificacion" to 5.0,
+             "mensaje" to "¡Hola, este es un comentario de prueba!"
+         )
 
-        firestoreDB.collection("comentarios")
-            .add(comentario)
-            .addOnSuccessListener { documentReference ->
-                // La colección se ha creado exitosamente
-            }
-            .addOnFailureListener { e ->
-                // Error al crear la colección
-            }*/
+         firestoreDB.collection("comentarios")
+             .add(comentario)
+             .addOnSuccessListener { documentReference ->
+                 // La colección se ha creado exitosamente
+             }
+             .addOnFailureListener { e ->
+                 // Error al crear la colección
+             }*/
 
     }
 
