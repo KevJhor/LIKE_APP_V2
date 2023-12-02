@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.like_app.MainActivity
 import com.example.like_app.R
+import com.example.like_app.RestauranteActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -18,11 +19,13 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,9 +50,13 @@ class LoginActivity : AppCompatActivity() {
             val correo = etUser.text.toString()
             val clave = etPassword.text.toString()
 
+
             auth.signInWithEmailAndPassword(correo, clave)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        val user = FirebaseAuth.getInstance().currentUser
+
+                            //checkUserRole(user!!.uid)
                         Snackbar.make(findViewById(android.R.id.content), "Inicio de sesión exitoso", Snackbar.LENGTH_LONG).show()
                         startActivity(Intent(this, MainActivity::class.java))
                     } else {
@@ -160,6 +167,50 @@ class LoginActivity : AppCompatActivity() {
         // Lógica cuando se hace clic en "¿No tienes cuenta? Regístrate"
         showRegisterOptions()
         Toast.makeText(this, "Manejando clic en registro", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun checkUserRole(userId: String) {
+        // Verifica si el usuario es un administrador
+        db.collection("bussiness").document(userId)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val documentSnapshot = task.result
+
+                    if (documentSnapshot != null && documentSnapshot.exists()) {
+                        // El documento existe, lo que indica que el usuario es un administrador
+                        //startActivity(Intent(this, RestauranteActivity::class.java))
+                        Toast.makeText(this, "Usuario existe", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // El documento no existe, verifica si es un usuario normal
+                        //checkUser(userId)
+                    }
+                } else {
+                    // Maneja el error de Firestore si es necesario
+                    Toast.makeText(this, "Error al verificar el rol", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun checkUser(userId: String) {
+        // Verifica si el usuario es un usuario normal
+        db.collection("users").document(userId)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    if (task.result!!.exists()) {
+                        // Usuario es un usuario normal
+                        //startActivity(Intent(this, MainActivity::class.java))
+                        Toast.makeText(this, "Si encontrousuario normal", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // El usuario no está en ninguna colección conocida, manejar según sea necesario
+                        Toast.makeText(this, "Usuario no reconocido", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // Maneja el error de Firestore si es necesario
+                    Toast.makeText(this, "Error al verificar el rol", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     companion object {

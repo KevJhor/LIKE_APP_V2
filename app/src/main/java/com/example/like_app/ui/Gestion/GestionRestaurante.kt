@@ -142,7 +142,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         btnMenus.setOnClickListener{
             val bundle = Bundle()
             bundle.putString("clave_nombre_rest",brandName )
-            findNavController().navigate(R.id.action_gestionRestaurante_to_gestionMenus,bundle)
+            findNavController().navigate(R.id.action_gestionRestaurantes_to_gestionMenus,bundle)
 
         }
         return view
@@ -167,7 +167,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
     private fun getMoneda(valor:String):String{
         //convertir a double
         val valorDouble=valor.toDouble()
-        // Especifica la moneda que deseas usar
+        // Especifica la moneda que deseas usa-r
         val moneda= Currency.getInstance("PEN")
         // Crea un formato para la moneda y el idioma específicos
         val formatoMoneda = java.text.NumberFormat.getCurrencyInstance(Locale("es", "PE"))

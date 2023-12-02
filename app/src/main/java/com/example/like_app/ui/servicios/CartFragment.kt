@@ -1,11 +1,13 @@
 package com.example.like_app.ui.servicios
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -15,6 +17,7 @@ import com.example.like_app.R
 import com.example.like_app.adapter.CartAdapter
 import com.example.like_app.model.CartModel
 import com.example.like_app.model.ItemMenu
+import com.example.like_app.ui.payonline.DepositoFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -38,6 +41,7 @@ class CartFragment : Fragment() ,CartAdapter.CartAdapterListener{
         // Inflate the layout for this fragment
         val view:View = inflater.inflate(R.layout.fragment_cart, container, false)
         val rvCartItems:RecyclerView=view.findViewById(R.id.rvCartItems)
+        val btnPagar: Button = view.findViewById(R.id.btnPagar)
         tvTotalCart=view.findViewById(R.id.tvTotalCart)
         tvSubTotalCart=view.findViewById(R.id.tvSubTotalCart)
         auth=FirebaseAuth.getInstance()
@@ -50,6 +54,10 @@ class CartFragment : Fragment() ,CartAdapter.CartAdapterListener{
         rvCartItems.adapter = adapter
         rvCartItems.layoutManager = layoutManager
 
+        btnPagar.setOnClickListener {
+            findNavController().navigate(R.id.action_cartFragment_to_payonlineFragment)
+
+        }
 
         return view
 
