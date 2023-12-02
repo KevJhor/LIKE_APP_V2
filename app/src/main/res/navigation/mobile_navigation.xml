@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.like_app.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/list_Rest_Fragment"
@@ -53,7 +53,7 @@
     <fragment
         android:id="@+id/pregFrecFragment"
         android:name="com.example.like_app.ui.fragments.PregFrecFragment"
-        android:label="fragment_preg_frec"
+        android:label="Pregunas frecuentes"
         tools:layout="@layout/fragment_preg_frec" />
     <fragment
         android:id="@+id/listaTiendas"
@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/restFragment"
         android:name="com.example.like_app.ui.fragments.RestFragment"
-        android:label="fragment_rest"
+        android:label="Restaurante"
         tools:layout="@layout/fragment_rest" >
         <action
             android:id="@+id/action_restFragment_to_detalleItemFragment"
@@ -74,7 +74,7 @@
     <fragment
         android:id="@+id/chkdepoFragment"
         android:name="com.example.like_app.ui.payonline.ChkdepoFragment"
-        android:label="fragment_chkdepo"
+        android:label="Validar deposito"
         tools:layout="@layout/fragment_chkdepo" />
 
     <fragment
@@ -113,7 +113,7 @@
     <fragment
         android:id="@+id/detalleItemFragment"
         android:name="com.example.like_app.ui.servicios.DetalleItemFragment"
-        android:label="fragment_detalle_item"
+        android:label="Detalle item"
         tools:layout="@layout/fragment_detalle_item" >
         <action
             android:id="@+id/action_detalleItemFragment_to_cartFragment"
@@ -127,7 +127,7 @@
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.like_app.ui.servicios.CartFragment"
-        android:label="fragment_cart"
+        android:label="Carrito"
         tools:layout="@layout/fragment_cart" >
         <action
             android:id="@+id/action_cartFragment_to_payonlineFragment"
@@ -150,11 +150,11 @@
     <fragment
         android:id="@+id/addcardFragment"
         android:name="com.example.like_app.ui.payonline.AddcardFragment"
-        android:label="AddcardFragment" />
+        android:label="Agrega Carrito" />
     <fragment
         android:id="@+id/payonlineFragment"
         android:name="com.example.like_app.ui.payonline.PayonlineFragment"
-        android:label="PayonlineFragment" >
+        android:label="Pago" >
         <action
             android:id="@+id/action_payonlineFragment_to_depositoFragment"
             app:destination="@id/depositoFragment" />
@@ -162,11 +162,11 @@
     <fragment
         android:id="@+id/estadoFragment"
         android:name="com.example.like_app.ui.fragments.EstadoFragment"
-        android:label="EstadoFragment" />
+        android:label="Estado" />
     <fragment
         android:id="@+id/depositoFragment"
         android:name="com.example.like_app.ui.payonline.DepositoFragment"
-        android:label="DepositoFragment" >
+        android:label="Deposito" >
         <action
             android:id="@+id/action_depositoFragment_to_estadoFragment"
             app:destination="@id/estadoFragment" />
