@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_gestionRestaurante_to_gestionMenus"
             app:destination="@id/gestionMenus" />
+        <action
+            android:id="@+id/action_gestionRestaurante_to_historialRestFragment"
+            app:destination="@id/historialRestFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -132,10 +135,10 @@
         android:label="Opiniones"
         tools:layout="@layout/fragment_comentarios" />
     <fragment
-        android:id="@+id/gestionRestFragment"
-        android:name="com.example.like_app.ui.Gestion.GestionRestFragment"
-        android:label="fragment_gestion_rest"
-        tools:layout="@layout/fragment_gestion_rest" />
+        android:id="@+id/historialRestFragment"
+        android:name="com.example.like_app.ui.fragments.HistorialRestFragment"
+        android:label="fragment_historial_rest"
+        tools:layout="@layout/fragment_historial_rest" />
 
 
 </navigation>

@@ -64,7 +64,7 @@
         tools:layout_editor_absoluteY="510dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnOrders"
         android:layout_width="300dp"
         android:layout_height="57dp"
         android:layout_marginBottom="36dp"

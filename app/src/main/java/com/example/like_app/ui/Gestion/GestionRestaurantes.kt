@@ -48,6 +48,7 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
         val tvDireccion:TextView=view.findViewById(R.id.tvDireccion)
 
         val btnMenus:Button=view.findViewById(R.id.btnMenus)
+        val btnOrders:Button=view.findViewById(R.id.btnOrders)
         //LISTAS PARA MIS RecyclerViews
         val listCategorias:ArrayList<MenuModel> = ArrayList()
         val lstItemsMenu: ArrayList<ItemMenu> = ArrayList()
@@ -133,6 +134,10 @@ class GestionRestaurante : Fragment(),ItemMenuAdapter.RecyclerViewEvent   {
 
             }
 
+        }
+        btnOrders.setOnClickListener {
+
+            findNavController().navigate(R.id.action_gestionRestaurante_to_historialRestFragment)
         }
         btnMenus.setOnClickListener{
             val bundle = Bundle()
