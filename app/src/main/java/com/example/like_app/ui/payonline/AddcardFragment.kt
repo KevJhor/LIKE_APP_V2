@@ -1,6 +1,7 @@
 package com.example.like_app.ui.payonline
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,7 +40,7 @@ class AddcardFragment : Fragment() {
             val expM = etExpMonth.text.toString()
             val expY = etExpYear.text.toString()
 
-            /*db.collection("tarjeta")
+            db.collection("tarjeta")
                 .addSnapshotListener { snap, e ->
                     if (e != null) {
                         Log.i("ERROR", "Ocurrio un Error")
@@ -55,10 +56,10 @@ class AddcardFragment : Fragment() {
                             document["cvv"].toString(),
                             document["saldo"].toString()
                         )
+
                     }
                 }
 
-            */
         }
         return view
     }
